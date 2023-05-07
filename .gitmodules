@@ -1,0 +1,8 @@
+[submodule "plugins/dotbot"]
+	ignore = dirty
+[submodule "plugins/dotbot-brewfile"]
+	ignore = dirty
+[submodule "plugins/dotbot-apt"]
+	ignore = dirty
+[submodule "plugins/dotbot-golang"]
+	ignore = dirty

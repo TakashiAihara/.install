@@ -1,0 +1,7 @@
+- description: Replace git to follow latest with apt.
+  command: >-
+    apt-get install -y software-properties-common ;
+    apt remove git -y ;
+    apt-add-repository -y ppa:git-core/ppa ;
+    apt-get update ;
+    apt-get install -y git

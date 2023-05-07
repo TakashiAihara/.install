@@ -1,0 +1,4 @@
+- description: Making zsh the default shell
+  command: >-
+    sudo sed --in-place -e '/auth.*required.*pam_shells.so/s/required/sufficient/g' /etc/pam.d/chsh ;
+    sudo chsh -s `which zsh | head -1` `whoami`

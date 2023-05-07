@@ -1,0 +1,3 @@
+- description: Install gh.
+  command: >-
+    curl -sS https://raw.githubusercontent.com/TakashiAihara/open_functions/master/install_gh.sh | sh

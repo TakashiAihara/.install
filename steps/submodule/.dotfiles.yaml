@@ -1,0 +1,3 @@
+- description: Sync .dotfiles.
+  command: >-
+    git submodule update --init --recursive links/.dotfiles

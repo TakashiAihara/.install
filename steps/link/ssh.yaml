@@ -1,0 +1,3 @@
+~/.ssh/keys: links/.ssh/keys
+~/.ssh/config: links/.ssh/config
+~/.ssh/conf.d: links/.ssh/conf.d

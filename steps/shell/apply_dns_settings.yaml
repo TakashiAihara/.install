@@ -1,0 +1,7 @@
+- description: Apply dns settings
+  command: >-
+    rm /etc/systemd/resolved.conf ;
+    cp ~/.install/settings/systemd/resolved.conf /etc/systemd/resolved.conf ;
+    rm /etc/resolv.conf ;
+    ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf ;
+    systemctl restart systemd-resolved

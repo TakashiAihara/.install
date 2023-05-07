@@ -1,0 +1,3 @@
+/etc/default/ufw: links/etc/ufw/default/ufw
+/etc/ufw/sysctl.conf: links/etc/ufw/sysctl.conf
+/etc/ufw/before.rules: links/etc/ufw/before.rules

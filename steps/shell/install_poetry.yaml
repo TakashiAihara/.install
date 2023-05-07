@@ -1,0 +1,3 @@
+- description: Install poetry.
+  command: >-
+    curl -sSL https://install.python-poetry.org | python3 -

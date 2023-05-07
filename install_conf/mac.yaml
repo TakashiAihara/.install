@@ -1,0 +1,52 @@
+- defaults: !defaults ubuntu
+
+- shell: !submodule .dotfiles
+    etc
+    .ssh
+    rclone
+
+- clean: ["~"]
+
+- create:
+    - ~/.config
+    - ~/.ssh
+    - /etc/fonts
+    - /etc/ssh
+- link: !link alacritty
+    dein
+    fonts
+    git
+    nvim
+    rclone
+    ssh
+    ssh_config
+    sshd_config
+    starship
+    tmux
+    zsh
+
+- shell: !shell register_authorized_key
+
+- shell: !shell install_zinit
+
+- shell: !shell link_fonts
+    install_starship
+    install_sdkman
+    install_rbenv
+    install_go
+    install_pyenv
+    install_poetry
+    install_node
+    install_fzf
+    install_xq
+    install_chromedriver
+    install_docker_with_plugin
+    install_gh
+    install_zoxide
+    install_pgenv
+    install_gcloud
+    prepare_android
+
+- go: !go ghq
+
+- brewfile: !brewfile mac

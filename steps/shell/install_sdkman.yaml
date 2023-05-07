@@ -1,0 +1,4 @@
+- description: Install sdkman.
+  command: >-
+    curl -s "https://get.sdkman.io" | bash ;
+    source "$HOME/.sdkman/bin/sdkman-init.sh"

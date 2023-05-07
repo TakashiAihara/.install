@@ -1,0 +1,16 @@
+- defaults: !defaults windows
+
+- shell: !submodule .dotfiles
+    rclone
+
+- create:
+    - ~/.ssh
+
+- link: !link alacritty
+    git
+    ssh
+    tmux
+
+- shell: !shell install_chocolatey
+    install_chocolatey_packages
+    install_winget_packages

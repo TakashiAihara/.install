@@ -1,0 +1,3 @@
+- description: Install xq.
+  command: >-
+    curl -sSL https://bit.ly/install-xq | sudo bash
