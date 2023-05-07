@@ -1,0 +1,5 @@
+- description: Install chromedriver.
+  command: >-
+    curl -L https://git.io/dpkg-i-from-url | bash -s -- https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb ;
+    apt --fix-broken install -y ;
+    curl -sS https://raw.githubusercontent.com/TakashiAihara/open_functions/master/get_chromedriver.sh | sh

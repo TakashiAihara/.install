@@ -1,0 +1,4 @@
+- description: Install starship.
+  command: >-
+    curl -fsSL https://starship.rs/install.sh -o /tmp/install.sh ;
+    sh /tmp/install.sh --force

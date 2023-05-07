@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+set -e
+
+. .env
+
+export DOTBOT_AREA=${AREA:-home}
+export DOTBOT_ARCH=${ARCH:-wsl}
+
+BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+git submodule update --init --recursive "${DOTBOT_PLUGINS_DIR}/${DOTBOT}"
+
+"${BASE_DIR}/${DOTBOT_PLUGINS_DIR}/${DOTBOT}/${DOTBOT_BIN}" \
+  -d "${BASE_DIR}" \
+  -c "${BASE_DIR}/${DOTBOT_CONFIG_TARGET_DIR}/${DOTBOT_PREPARE_CONFIG_FILE}${DOTBOT_CONFIG_FILE_SUFFIX}"
+
+"${BASE_DIR}/${DOTBOT_PLUGINS_DIR}/${DOTBOT}/${DOTBOT_BIN}" \
+  -d "${BASE_DIR}" \
+  --plugin-dir "${DOTBOT_PLUGINS_DIR}/${DOTBOT_BREWFILE_PLUGIN}" \
+  --plugin-dir "${DOTBOT_PLUGINS_DIR}/${DOTBOT_GO_PLUGIN}" \
+  --plugin-dir "${DOTBOT_PLUGINS_DIR}/${DOTBOT_APT_PLUGIN}" \
+  -c "${BASE_DIR}/${DOTBOT_CONFIG_TARGET_DIR}/${DOTBOT_ARCH}${DOTBOT_CONFIG_FILE_SUFFIX}" "${@}"

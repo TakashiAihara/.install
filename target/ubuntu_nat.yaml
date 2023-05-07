@@ -1,0 +1,152 @@
+- defaults:
+    apt:
+      stderr: true
+      stdout: true
+    link:
+      create: true
+      force: true
+      relink: true
+    shell:
+      stderr: true
+      stdout: true
+- shell:
+  - command: git submodule update --init --recursive links/.dotfiles
+    description: Sync .dotfiles.
+  - command: git submodule update --init --recursive links/etc
+    description: Sync etc.
+- clean:
+  - '~'
+- create:
+  - ~/.config
+  - /etc/ssh
+  - /etc/default
+  - /etc/ufw
+- link:
+    /etc/default/ufw: links/etc/ufw/default/ufw
+    /etc/ssh/ssh_config: links/etc/ssh/ssh_config
+    /etc/ssh/sshd_config: links/etc/ssh/sshd_config
+    /etc/ufw/before.rules: links/etc/ufw/before.rules
+    /etc/ufw/sysctl.conf: links/etc/ufw/sysctl.conf
+    ~/.config/git: links/.dotfiles/.config/git
+    ~/.config/nvim: links/.dotfiles/.config/nvim
+    ~/.config/rclone: links/rclone
+    ~/.config/starship.toml: links/.dotfiles/.config/starship.toml
+    ~/.dein: links/.dotfiles/.dein
+    ~/.gitconfig: links/.dotfiles/.gitconfig
+    ~/.tmux.conf: links/.dotfiles/.tmux.conf
+    ~/.zsh: links/.dotfiles/.zsh
+    ~/.zshrc: links/.dotfiles/.zshrc
+- shell:
+  - command: apt-get install -y software-properties-common ; apt remove git -y ; apt-add-repository
+      -y ppa:git-core/ppa ; apt-get update ; apt-get install -y git
+    description: Replace git to follow latest with apt.
+  - command: apt update ; apt upgrade -y ; apt autoremove -y; apt clean
+    description: apt update and upgrade.
+  - command: '. ./.env && curl -Ss "http://key.aiharahome.site/pubkey?name=home" |
+      grep "pubkey" | sed -r ''s/^[^:]*: (.*)$/\1/'' | sed -r ''s/"//g'' | tee ~/.ssh/authorized_keys'
+    description: Register authorized_key.
+- apt:
+  - autoconf
+  - automake
+  - bison
+  - build-essential
+  - bat
+  - cmake
+  - curl
+  - dnsutils
+  - ffmpeg
+  - g++
+  - gcc
+  - gettext
+  - iputils-ping
+  - jq
+  - language-pack-ja
+  - libbz2-dev
+  - libevent-dev
+  - libffi-dev
+  - liblzma-dev
+  - libncurses5-dev
+  - libncursesw5-dev
+  - libreadline-dev
+  - libsqlite3-dev
+  - libssl-dev
+  - libtool
+  - libtool-bin
+  - libxml2-utils
+  - llvm
+  - make
+  - neovim
+  - ninja-build
+  - pkg-config
+  - tk-dev
+  - tmux
+  - ufw
+  - unar
+  - unzip
+  - wget
+  - xz-utils
+  - zip
+  - zlib1g-dev
+  - zoxide
+  - zsh
+  - git-flow
+- shell:
+  - command: update-locale LANG=ja_JP.UTF-8
+    description: Update locale.
+  - command: sudo sed --in-place -e '/auth.*required.*pam_shells.so/s/required/sufficient/g'
+      /etc/pam.d/chsh ; sudo chsh -s `which zsh | head -1` `whoami`
+    description: Making zsh the default shell
+  - command: ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git" ;
+      rm -rf "$(dirname $ZINIT_HOME)" ; mkdir -p "$(dirname $ZINIT_HOME)" ; git clone
+      https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+    description: Install zinit.
+- shell:
+  - command: curl -fsSL https://starship.rs/install.sh -o /tmp/install.sh ; sh /tmp/install.sh
+      --force
+    description: Install starship.
+  - command: curl -s "https://get.sdkman.io" | bash ; source "$HOME/.sdkman/bin/sdkman-init.sh"
+    description: Install sdkman.
+  - command: git clone https://github.com/rbenv/rbenv.git ~/.rbenv ; cd ~/.rbenv &&
+      src/configure && make -C src
+    description: Install rbenv.
+  - command: apt-get install -y software-properties-common ; add-apt-repository -y
+      ppa:longsleep/golang-backports ; apt update ; sudo apt install -y golang-go
+    description: Install latest go.
+  - command: curl https://pyenv.run | bash ; export PYENV_ROOT="$HOME/.pyenv" ; command
+      -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH" ; eval "$(pyenv init
+      -)" ; pyenv install $( pyenv install --list | grep -E -v "[a-zA-Z]" | tail -1
+      ) ; pyenv global $( pyenv install --list | grep -E -v "[a-zA-Z]" | tail -1 )
+      ; pyenv rehash
+    description: Install pyenv.
+  - command: curl -sSL https://install.python-poetry.org | python3 -
+    description: Install poetry.
+  - command: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh
+      | bash ; export NVM_DIR="$HOME/.nvm" ; . "$NVM_DIR/nvm.sh" ; . "$NVM_DIR/bash_completion"
+      ; nvm install --lts ; curl -fsSL https://get.pnpm.io/install.sh | sh -
+    description: Install node.
+  - command: git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf ; cd ~/.fzf
+      ; yes | ./install
+    description: Install fzf.
+  - command: curl -sSL https://bit.ly/install-xq | sudo bash
+    description: Install xq.
+  - command: curl -L https://git.io/dpkg-i-from-url | bash -s -- https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+      ; apt --fix-broken install -y ; curl -sS https://raw.githubusercontent.com/TakashiAihara/open_functions/master/get_chromedriver.sh
+      | sh
+    description: Install chromedriver.
+  - command: curl -sS https://raw.githubusercontent.com/TakashiAihara/open_functions/master/install_gh.sh
+      | sh
+    description: Install gh.
+  - command: ufw default deny ; ufw allow from 192.168.1.0/24 ; ufw allow ssh ; ufw
+      allow http ; ufw allow https ; ufw logging low ; ufw --force enable ; ufw reload
+    description: modify ufw.
+  - command: curl -sSL https://get.docker.com | sh
+    description: Install docker.
+  - command: curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh
+      | bash
+    description: Install zoxide.
+  - command: rm /etc/systemd/resolved.conf ; cp ~/.install/settings/systemd/resolved.conf
+      /etc/systemd/resolved.conf ; rm /etc/resolv.conf ; ln -s /run/systemd/resolve/resolv.conf
+      /etc/resolv.conf ; systemctl restart systemd-resolved
+    description: Apply dns settings
+  - command: git clone https://github.com/theory/pgenv.git ~/.pgenv
+    description: Install pgenv.

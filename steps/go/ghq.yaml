@@ -1,0 +1,5 @@
+- package:
+    - github.com/x-motemen/ghq@latest
+  flags: [-v, -u]
+  stdout: true
+  stderr: true

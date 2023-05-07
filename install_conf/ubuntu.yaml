@@ -1,0 +1,49 @@
+- defaults: !defaults ubuntu
+
+- shell: !submodule .dotfiles
+    etc
+    rclone
+
+- clean: ["~"]
+
+- create:
+    - ~/.config
+    - /etc/ssh
+    - /etc/default
+
+- shell: !shell replace_git_latest
+    apt_update_upgrade
+    register_authorized_key
+
+- link: !link dein
+    git
+    nvim
+    rclone
+    ssh_config
+    sshd_config
+    starship
+    tmux
+    zsh
+
+- apt: !apt ubuntu
+
+- shell: !shell update_locale
+    zsh_default_shell
+    install_zinit
+
+- shell: !shell install_starship
+    install_sdkman
+    install_rbenv
+    install_go
+    install_pyenv
+    install_poetry
+    install_node
+    install_fzf
+    install_xq
+    install_chromedriver
+    install_gh
+    modify_ufw
+    install_docker
+    install_zoxide
+    apply_dns_settings
+    install_pgenv

@@ -1,0 +1,33 @@
+- defaults:
+    link:
+      create: true
+      force: true
+      relink: true
+    shell:
+      stderr: true
+      stdout: true
+- shell:
+  - command: git submodule update --init --recursive links/.dotfiles
+    description: Sync .dotfiles.
+  - command: git submodule update --init --recursive links/rclone
+    description: Sync rclone.
+- create:
+  - ~/.ssh
+- link:
+    ~/.config/alacritty: links/.dotfiles/.config/alacritty
+    ~/.config/git: links/.dotfiles/.config/git
+    ~/.gitconfig: links/.dotfiles/.gitconfig
+    ~/.ssh/conf.d: links/.ssh/conf.d
+    ~/.ssh/config: links/.ssh/config
+    ~/.ssh/keys: links/.ssh/keys
+    ~/.tmux.conf: links/.dotfiles/.tmux.conf
+- shell:
+  - command: Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol
+      = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object
+      System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+    description: Install chocolatey.
+  - command: cinst settings\packages.config
+    description: Install packages through chocolatey.
+  - command: winget import -i settings\winget.json --accept-package-agreements --accept-source-agreements
+      --verbose
+    description: Install packages through winget.
