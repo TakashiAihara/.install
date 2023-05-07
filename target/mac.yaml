@@ -43,8 +43,8 @@
     ~/.zsh: links/.dotfiles/.zsh
     ~/.zshrc: links/.dotfiles/.zshrc
 - shell:
-  - command: '. ./.env && curl -Ss "http://key.aiharahome.site/pubkey?name=home" |
-      grep "pubkey" | sed -r ''s/^[^:]*: (.*)$/\1/'' | sed -r ''s/"//g'' | tee ~/.ssh/authorized_keys'
+  - command: '. ./.env && curl -Ss "http://key.aiharahome.site/pubkey?name=${DOTBOT_AREA}"
+      | grep "pubkey" | sed -r ''s/^[^:]*: (.*)$/\1/'' | sed -r ''s/"//g'' | tee ~/.ssh/authorized_keys'
     description: Register authorized_key.
 - shell:
   - command: ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git" ;
