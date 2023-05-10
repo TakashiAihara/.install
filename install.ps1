@@ -46,7 +46,7 @@ function ExecutePrepare($PYTHON) {
         -d $BaseDir `
         -c $( `
             Join-Path $BaseDir -ChildPath $env:DOTBOT_CONFIG_TARGET_DIR | `
-            Join-Path -ChildPath $( $env:DOTBOT_PREPARE_WIN_CONFIG_FILE + $env:DOTBOT_CONFIG_FILE_SUFFIX )`
+            Join-Path -ChildPath $( $env:DOTBOT_PREPARE_CONFIG_FILE + $env:DOTBOT_CONFIG_FILE_SUFFIX )`
     )
 }
 
