@@ -1,1 +1,4 @@
-/etc/fonts/local.conf: links/.dotfiles/local.conf
+/etc/fonts/local.conf:
+  path: links/.dotfiles/local.conf
+  create: true
+  relink: true

@@ -1,2 +1,8 @@
-~/.config/git: links/.dotfiles/.config/git
-~/.gitconfig: links/.dotfiles/.gitconfig
+~/.config/git:
+  path: links/.dotfiles/.config/git
+  create: true
+  relink: true
+~/.gitconfig:
+  path: links/.dotfiles/.gitconfig
+  create: true
+  relink: true

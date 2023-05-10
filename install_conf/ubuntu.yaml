@@ -6,15 +6,6 @@
 
 - clean: ["~"]
 
-- create:
-    - ~/.config
-    - /etc/ssh
-    - /etc/default
-
-- shell: !shell replace_git_latest
-    apt_update_upgrade
-    register_authorized_key
-
 - link: !link dein
     git
     nvim
@@ -25,13 +16,16 @@
     tmux
     zsh
 
+- shell: !shell replace_git_latest
+    apt_update_upgrade
+    register_authorized_key
+
 - apt: !apt ubuntu
 
 - shell: !shell update_locale
     zsh_default_shell
     install_zinit
-
-- shell: !shell install_starship
+    install_starship
     install_sdkman
     install_rbenv
     install_go

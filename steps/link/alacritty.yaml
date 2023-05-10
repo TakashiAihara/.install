@@ -1,1 +1,4 @@
-~/.config/alacritty: links/.dotfiles/.config/alacritty
+~/.config/alacritty:
+  path: links/.dotfiles/.config/alacritty
+  create: true
+  relink: true

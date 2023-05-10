@@ -1,3 +1,12 @@
-~/.ssh/keys: links/.ssh/keys
-~/.ssh/config: links/.ssh/config
-~/.ssh/conf.d: links/.ssh/conf.d
+~/.ssh/keys:
+  path: links/.ssh/keys
+  create: true
+  relink: true
+~/.ssh/config:
+  path: links/.ssh/config
+  create: true
+  relink: true
+~/.ssh/conf.d:
+  path: links/.ssh/conf.d
+  create: true
+  relink: true

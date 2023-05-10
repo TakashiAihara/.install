@@ -1,1 +1,4 @@
-~/.config/karabiner: links/.dotfiles/.config/karabiner
+~/.config/karabiner:
+  path: links/.dotfiles/.config/karabiner
+  create: true
+  relink: true
