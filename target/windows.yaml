@@ -9,22 +9,41 @@
 - shell:
   - command: git submodule update --init --recursive links/.dotfiles
     description: Sync .dotfiles.
-  - command: git submodule update --init --recursive links/rclone
-    description: Sync rclone.
-- create:
-  - ~/.ssh
+  - command: git submodule update --init --recursive links/.ssh
+    description: Sync .ssh.
 - link:
-    ~/.config/alacritty: links/.dotfiles/.config/alacritty
-    ~/.config/git: links/.dotfiles/.config/git
-    ~/.gitconfig: links/.dotfiles/.gitconfig
-    ~/.ssh/conf.d: links/.ssh/conf.d
-    ~/.ssh/config: links/.ssh/config
-    ~/.ssh/keys: links/.ssh/keys
-    ~/.tmux.conf: links/.dotfiles/.tmux.conf
+    ~/.config/alacritty:
+      create: true
+      path: links/.dotfiles/.config/alacritty
+      relink: true
+    ~/.config/git:
+      create: true
+      path: links/.dotfiles/.config/git
+      relink: true
+    ~/.config/nvim:
+      create: true
+      path: links/.dotfiles/.config/nvim
+      relink: true
+    ~/.gitconfig:
+      create: true
+      path: links/.dotfiles/.gitconfig
+      relink: true
+    ~/.ssh/conf.d:
+      create: true
+      path: links/.ssh/conf.d
+      relink: true
+    ~/.ssh/config:
+      create: true
+      path: links/.ssh/config
+      relink: true
+    ~/.ssh/keys:
+      create: true
+      path: links/.ssh/keys
+      relink: true
 - shell:
-  - command: Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol
-      = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object
-      System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+  - command: powershell -Command "Set-ExecutionPolicy Bypass -Scope Process -Force;
+      [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol
+      -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))"
     description: Install chocolatey.
   - command: cinst settings\packages.config
     description: Install packages through chocolatey.

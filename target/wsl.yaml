@@ -26,22 +26,70 @@
   - /etc/fonts
   - /etc/ssh
 - link:
-    /etc/fonts/local.conf: links/.dotfiles/local.conf
-    /etc/ssh/ssh_config: links/etc/ssh/ssh_config
-    /etc/ssh/sshd_config: links/etc/ssh/sshd_config
-    ~/.config/alacritty: links/.dotfiles/.config/alacritty
-    ~/.config/git: links/.dotfiles/.config/git
-    ~/.config/nvim: links/.dotfiles/.config/nvim
-    ~/.config/rclone: links/rclone
-    ~/.config/starship.toml: links/.dotfiles/.config/starship.toml
-    ~/.dein: links/.dotfiles/.dein
-    ~/.gitconfig: links/.dotfiles/.gitconfig
-    ~/.ssh/conf.d: links/.ssh/conf.d
-    ~/.ssh/config: links/.ssh/config
-    ~/.ssh/keys: links/.ssh/keys
-    ~/.tmux.conf: links/.dotfiles/.tmux.conf
-    ~/.zsh: links/.dotfiles/.zsh
-    ~/.zshrc: links/.dotfiles/.zshrc
+    /etc/fonts/local.conf:
+      create: true
+      path: links/.dotfiles/local.conf
+      relink: true
+    /etc/ssh/ssh_config:
+      create: true
+      path: links/etc/ssh/ssh_config
+      relink: true
+    /etc/ssh/sshd_config:
+      create: true
+      path: links/etc/ssh/sshd_config
+      relink: true
+    ~/.config/alacritty:
+      create: true
+      path: links/.dotfiles/.config/alacritty
+      relink: true
+    ~/.config/git:
+      create: true
+      path: links/.dotfiles/.config/git
+      relink: true
+    ~/.config/nvim:
+      create: true
+      path: links/.dotfiles/.config/nvim
+      relink: true
+    ~/.config/rclone:
+      create: true
+      path: links/rclone
+      relink: true
+    ~/.config/starship.toml:
+      create: true
+      path: links/.dotfiles/.config/starship.toml
+      relink: true
+    ~/.dein:
+      create: true
+      path: links/.dotfiles/.dein
+      relink: true
+    ~/.gitconfig:
+      create: true
+      path: links/.dotfiles/.gitconfig
+      relink: true
+    ~/.ssh/conf.d:
+      create: true
+      path: links/.ssh/conf.d
+      relink: true
+    ~/.ssh/config:
+      create: true
+      path: links/.ssh/config
+      relink: true
+    ~/.ssh/keys:
+      create: true
+      path: links/.ssh/keys
+      relink: true
+    ~/.tmux.conf:
+      create: true
+      path: links/.dotfiles/.tmux.conf
+      relink: true
+    ~/.zsh:
+      create: true
+      path: links/.dotfiles/.zsh
+      relink: true
+    ~/.zshrc:
+      create: true
+      path: links/.dotfiles/.zshrc
+      relink: true
 - shell:
   - command: apt-get install -y software-properties-common ; apt remove git -y ; apt-add-repository
       -y ppa:git-core/ppa ; apt-get update ; apt-get install -y git
