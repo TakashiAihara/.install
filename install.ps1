@@ -1,47 +1,81 @@
 $ErrorActionPreference = "Stop"
 
-$ARCH = $Args[0]
+$envFile = ".env"
+$BaseDir = $PSScriptRoot
+Set-Location $BaseDir
+$GlobalArgs = $Args
 
-$CONFIG_PATH = "install_conf"
-$CONFIG = Join-Path $CONFIG_PATH "${ARCH}.yaml"
+function ReadEnvFile {
+    if (Test-Path $envFile) {
+        foreach ($line in Get-Content $envFile) {
+            if ($line -notmatch '^\s*#.*' -and $line -match '\S') {
+                $name, $value = $line.split('=')
+                set-content env:\$name $value.Trim('"')
+            }
+        }
+    }
+}
 
-$CONFIG_TARGET_PATH = "target"
-$CONFIG_TARGET = Join-Path $CONFIG_TARGET_PATH "${ARCH}.yaml"
+function ApplyOptions {
+    if ($null -eq $env:AREA -or '' -eq $env:AREA) {
+        $env:DOTBOT_AREA = 'home'
+    }
+    else {
+        $env:DOTBOT_AREA = $env:AREA
+    }
 
-$DOTBOT_DIR = "dotbot"
-$DOTBOT_BIN = "bin/dotbot"
+    if ($null -eq $env:ARCH -or '' -eq $env:ARCH) {
+        $env:DOTBOT_ARCH = 'windows'
+    }
+    else {
+        $env:DOTBOT_ARCH = $env:ARCH
+    }
+}
 
-GENERATOR_PATH="utils/generate.py"
+function UpdateDotbot {
+    git submodule update --init --recursive $(Join-Path $env:DOTBOT_PLUGINS_DIR -ChildPath $env:DOTBOT)
 
-PLUGIN_PATH="plugins"
+}
 
-DOTBOT="${PLUGIN_PATH}/dotbot"
-DOT_BREWFILE="${PLUGIN_PATH}/dotbot-brewfile"
-DOT_GO="${PLUGIN_PATH}/dotbot-golang"
-DOT_APT="${PLUGIN_PATH}/dotbot-apt"
+function ExecutePrepare($PYTHON) {
+    &$PYTHON $( `
+            Join-Path $BaseDir -ChildPath $env:DOTBOT_PLUGINS_DIR | `
+            Join-Path -ChildPath $env:DOTBOT | `
+            Join-Path -ChildPath $env:DOTBOT_BIN `
+    ) `
+        -d $BaseDir `
+        -c $( `
+            Join-Path $BaseDir -ChildPath $env:DOTBOT_CONFIG_TARGET_DIR | `
+            Join-Path -ChildPath $( $env:DOTBOT_PREPARE_WIN_CONFIG_FILE + $env:DOTBOT_CONFIG_FILE_SUFFIX )`
+    )
+}
 
-DOTBOT_BIN="${DOTBOT}/bin/dotbot"
+function ExecuteMainProcess($PYTHON) {
+    &$PYTHON $( `
+            Join-Path $BaseDir -ChildPath $env:DOTBOT_PLUGINS_DIR | `
+            Join-Path -ChildPath $env:DOTBOT | `
+            Join-Path -ChildPath $env:DOTBOT_BIN `
+    ) `
+        -d $BaseDir `
+        -c $( `
+            Join-Path $BaseDir -ChildPath $env:DOTBOT_CONFIG_TARGET_DIR | `
+            Join-Path -ChildPath $( $env:DOTBOT_ARCH + $env:DOTBOT_CONFIG_FILE_SUFFIX ) `
+    ) `
+        $GlobalArgs
+}
 
-
-
-$BASEDIR = $PSScriptRoot
-
-winget install Git.Git --accept-package-agreements --accept-source-agreements
-winget install python3 --accept-package-agreements --accept-source-agreements
-python3 -m pip install --user pyyaml
-python3 generate.py "${CONFIG}"
-
-Set-Location $BASEDIR
-git -C $DOTBOT_DIR submodule sync --quiet --recursive
-git submodule update --init --recursive $DOTBOT_DIR
+ReadEnvFile
+ApplyOptions
+UpdateDotbot
 
 foreach ($PYTHON in ('python', 'python3', 'python2')) {
-    # Python redirects to Microsoft Store in Windows 10 when not installed
     if (& { $ErrorActionPreference = "SilentlyContinue"
             ![string]::IsNullOrEmpty((&$PYTHON -V))
             $ErrorActionPreference = "Stop" }) {
-        &$PYTHON $(Join-Path $BASEDIR -ChildPath $DOTBOT_DIR | Join-Path -ChildPath $DOTBOT_BIN) -d $BASEDIR -c $CONFIG_TARGET
+        ExecutePrepare($PYTHON)
+        ExecuteMainProcess($PYTHON)
         return
     }
 }
+
 Write-Error "Error: Cannot find Python."
