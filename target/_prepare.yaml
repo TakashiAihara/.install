@@ -3,7 +3,5 @@
       stderr: true
       stdout: true
 - shell:
-  - command: for submodule in $( git submodule status | grep "plugins" | awk '{ print
-      $2}' ) ; do git -C "${submodule}" submodule sync --quiet --recursive ; git submodule
-      update --init --recursive "${submodule}" ; done
-    description: Submodules sync and update.
+  - command: git submodule update --init --force --recursive -- plugins
+    description: Submodules update.
