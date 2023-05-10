@@ -40,6 +40,7 @@
     "!create",
     "!link",
     "!shell",
+    "!ps",
     "!go",
     "!apt",
     "!brewfile",
