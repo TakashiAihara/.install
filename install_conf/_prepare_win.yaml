@@ -1,0 +1,3 @@
+- defaults: !defaults _prepare
+
+- shell: !ps update_plugins
