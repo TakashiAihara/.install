@@ -7,11 +7,6 @@
 
 - clean: ["~"]
 
-- create:
-    - ~/.config
-    - ~/.ssh
-    - /etc/fonts
-    - /etc/ssh
 - link: !link alacritty
     dein
     fonts
@@ -26,10 +21,8 @@
     zsh
 
 - shell: !shell register_authorized_key
-
-- shell: !shell install_zinit
-
-- shell: !shell link_fonts
+    install_zinit
+    link_fonts
     install_starship
     install_sdkman
     install_rbenv

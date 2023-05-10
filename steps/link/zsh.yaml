@@ -1,2 +1,8 @@
-~/.zsh: links/.dotfiles/.zsh
-~/.zshrc: links/.dotfiles/.zshrc
+~/.zsh:
+  path: links/.dotfiles/.zsh
+  create: true
+  relink: true
+~/.zshrc:
+  path: links/.dotfiles/.zshrc
+  create: true
+  relink: true

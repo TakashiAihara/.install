@@ -1,3 +1,12 @@
-/etc/default/ufw: links/etc/ufw/default/ufw
-/etc/ufw/sysctl.conf: links/etc/ufw/sysctl.conf
-/etc/ufw/before.rules: links/etc/ufw/before.rules
+/etc/default/ufw:
+  path: links/etc/ufw/default/ufw
+  create: true
+  relink: true
+/etc/ufw/sysctl.conf:
+  path: links/etc/ufw/sysctl.conf
+  create: true
+  relink: true
+/etc/ufw/before.rules:
+  path: links/etc/ufw/before.rules
+  create: true
+  relink: true

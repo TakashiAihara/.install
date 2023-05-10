@@ -1,1 +1,4 @@
-/etc/ssh/ssh_config: links/etc/ssh/ssh_config
+/etc/ssh/ssh_config:
+  path: links/etc/ssh/ssh_config
+  create: true
+  relink: true

@@ -1,1 +1,4 @@
-~/.dein: links/.dotfiles/.dein
+~/.dein:
+  path: links/.dotfiles/.dein
+  create: true
+  relink: true

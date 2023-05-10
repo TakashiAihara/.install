@@ -1,1 +1,4 @@
-~/.config/nvim: links/.dotfiles/.config/nvim
+~/.config/nvim:
+  path: links/.dotfiles/.config/nvim
+  create: true
+  relink: true
