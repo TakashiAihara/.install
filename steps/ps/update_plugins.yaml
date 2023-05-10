@@ -1,7 +1,0 @@
-- description: Submodules sync and update.
-  command: >-
-    powershell -Command "git submodule status | Select-String 'plugins' | ForEach-Object {
-    $submodule = $_.Line.Split(' ')[1] ;
-    # git -C $submodule submodule sync --quiet --recursive ;
-    git submodule update --init --recursive $submodule ;
-    }"
