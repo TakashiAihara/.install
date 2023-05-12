@@ -137,9 +137,11 @@
   - command: git clone https://github.com/rbenv/rbenv.git ~/.rbenv ; cd ~/.rbenv &&
       src/configure && make -C src
     description: Install rbenv.
-  - command: apt-get install -y software-properties-common ; add-apt-repository -y
-      ppa:longsleep/golang-backports ; apt update ; sudo apt install -y golang-go
-    description: Install latest go.
+  - command: bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+      ; source ${HOME}/.gvm/scripts/gvm ; gvm install $(gvm listall | grep "go" |
+      grep -v "rc" | tail -1) -B ; gvm use $(gvm listall | grep "go" | grep -v "rc"
+      | tail -1) --default
+    description: Install latest go through gvm.
   - command: curl https://pyenv.run | bash ; export PYENV_ROOT="$HOME/.pyenv" ; command
       -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH" ; eval "$(pyenv init
       -)" ; pyenv install $( pyenv install --list | grep -E -v "[a-zA-Z]" | tail -1
@@ -178,3 +180,11 @@
     description: Apply dns settings
   - command: git clone https://github.com/theory/pgenv.git ~/.pgenv
     description: Install pgenv.
+- go:
+  - flags:
+    - -v
+    - -u
+    package:
+    - github.com/x-motemen/ghq@latest
+    stderr: true
+    stdout: true
