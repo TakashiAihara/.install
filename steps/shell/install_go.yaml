@@ -1,6 +1,6 @@
-- description: Install latest go.
+- description: Install latest go through gvm.
   command: >-
-    apt-get install -y software-properties-common ;
-    add-apt-repository -y ppa:longsleep/golang-backports ;
-    apt update ;
-    sudo apt install -y golang-go
+    bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer) ;
+    source ${HOME}/.gvm/scripts/gvm ;
+    gvm install $(gvm listall | grep "go" | grep -v "rc" | tail -1) -B ;
+    gvm use $(gvm listall | grep "go" | grep -v "rc" | tail -1) --default
