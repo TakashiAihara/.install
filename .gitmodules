@@ -10,6 +10,9 @@
 	ignore = dirty
 	path = plugins/dotbot-apt
 	url = https://github.com/bryant1410/dotbot-apt
+[submodule "plugins/dotbot-go"]
+	path = plugins/dotbot-go
+	url = https://github.com/TakashiAihara/dotbot-go
 [submodule "links/.dotfiles"]
 	path = links/.dotfiles
 	url = https://github.com/TakashiAihara/.dotfiles
