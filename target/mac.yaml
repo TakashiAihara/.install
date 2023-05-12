@@ -154,11 +154,10 @@
       | sdkmanager "build-tools;33.0.1" "platforms;android-33" "platform-tools"
     description: Prepare android.
 - go:
+  - github.com/x-motemen/ghq@latest
   - flags:
     - -v
     - -u
-    package:
-    - github.com/x-motemen/ghq@latest
     stderr: true
     stdout: true
 - brewfile:

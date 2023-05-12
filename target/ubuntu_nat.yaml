@@ -191,10 +191,9 @@
   - command: git clone https://github.com/theory/pgenv.git ~/.pgenv
     description: Install pgenv.
 - go:
+  - github.com/x-motemen/ghq@latest
   - flags:
     - -v
     - -u
-    package:
-    - github.com/x-motemen/ghq@latest
     stderr: true
     stdout: true
