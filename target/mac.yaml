@@ -95,8 +95,7 @@
     description: Install zinit.
   - command: fc-cache -fv
     description: link fonts.
-  - command: curl -fsSL https://starship.rs/install.sh -o /tmp/install.sh ; sh /tmp/install.sh
-      --force
+  - command: curl -sS https://starship.rs/install.sh | sh -s -- -y
     description: Install starship.
   - command: curl -s "https://get.sdkman.io" | bash ; source "$HOME/.sdkman/bin/sdkman-init.sh"
     description: Install sdkman.
