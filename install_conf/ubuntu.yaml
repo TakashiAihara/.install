@@ -16,7 +16,8 @@
     tmux
     zsh
 
-- shell: !shell replace_git_latest
+- shell: !shell avoid_restart_service_confirm
+    replace_git_latest
     apt_update_upgrade
     register_authorized_key
 
