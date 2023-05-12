@@ -11,28 +11,28 @@ Use submodules for Linking private settings.
 ### Commandline
 
 ```
-AREA=home TARGET=wsl ./install
+AREA=home ARCH=wsl ./install
 ```
 
 ```
-AREA=gcp TARGET=ubuntu ./install
+AREA=gcp ARCH=ubuntu ./install
 ```
 
 ```
-AREA=home TARGET=mac ./install
+AREA=home ARCH=mac ./install
 ```
 
 *Following command needs Admin rights
 
 ```
-$Env:AREA="home" ; $Env:TARGET="windows" ; .\install.ps1
+$Env:AREA="home" ; $Env:ARCH="windows" ; .\install.ps1
 ```
 
 ### Expected Environment Variables
 
 * AREA
   * home/gcp/oci/conoha
-* TARGET
+* ARCH
   * wsl/ubuntu/mac/windows
 
 ## Architecture
