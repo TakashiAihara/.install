@@ -1,0 +1,4 @@
+- description: Avoid service restart confirm for ubuntu 22.04~.
+  command: >-
+    mkdir -p /etc/needrestart/conf.d ;
+    echo "\$nrconf{restart} = 'a';" > /etc/needrestart/conf.d/50local.conf
