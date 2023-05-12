@@ -64,6 +64,9 @@
       path: links/.dotfiles/.zshrc
       relink: true
 - shell:
+  - command: mkdir -p /etc/needrestart/conf.d ; echo "\$nrconf{restart} = 'a';" >
+      /etc/needrestart/conf.d/50local.conf
+    description: Avoid service restart confirm for ubuntu 22.04~.
   - command: apt-get install -y software-properties-common ; apt remove git -y ; apt-add-repository
       -y ppa:git-core/ppa ; apt-get update ; apt-get install -y git
     description: Replace git to follow latest with apt.
@@ -127,8 +130,7 @@
       rm -rf "$(dirname $ZINIT_HOME)" ; mkdir -p "$(dirname $ZINIT_HOME)" ; git clone
       https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
     description: Install zinit.
-  - command: curl -fsSL https://starship.rs/install.sh -o /tmp/install.sh ; sh /tmp/install.sh
-      --force
+  - command: curl -sS https://starship.rs/install.sh | sh -s -- -y
     description: Install starship.
   - command: curl -s "https://get.sdkman.io" | bash ; source "$HOME/.sdkman/bin/sdkman-init.sh"
     description: Install sdkman.
