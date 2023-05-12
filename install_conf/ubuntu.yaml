@@ -42,3 +42,5 @@
     install_zoxide
     apply_dns_settings
     install_pgenv
+
+- go: !go ghq

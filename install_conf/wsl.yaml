@@ -52,3 +52,5 @@
     install_pgenv
     install_gcloud
     prepare_android
+
+- go: !go ghq
