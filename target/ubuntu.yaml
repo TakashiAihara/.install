@@ -167,7 +167,7 @@
   - command: curl -sS https://raw.githubusercontent.com/TakashiAihara/open_functions/master/install_gh.sh
       | sh
     description: Install gh.
-  - command: ufw default deny ; ufw allow from 192.168.1.0/24 ; ufw allow ssh ; ufw
+  - command: ufw default deny ; ufw allow from 192.168.0.0/24 ; ufw allow ssh ; ufw
       allow http ; ufw allow https ; ufw logging low ; ufw --force enable ; ufw reload
     description: modify ufw.
   - command: curl -sSL https://get.docker.com | sh
