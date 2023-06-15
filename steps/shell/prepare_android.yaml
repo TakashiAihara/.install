@@ -6,7 +6,7 @@
     export ANDROID_SDK_ROOT="/usr/local/android" ;
     export PATH="$PATH:$ANDROID_HOME/cmdline-tools/latest/bin" ;
     export PATH="$PATH:$ANDROID_HOME/platform-tools" ;
+    rm -rf ${ANDROID_SDK_ROOT}/cmdline-tools/latest ;
     mkdir -p ${ANDROID_SDK_ROOT}/cmdline-tools/latest ;
     mv /tmp/cmdline-tools/* ${ANDROID_SDK_ROOT}/cmdline-tools/latest ;
-    sdk install java 21.ea.6-open ;
-    yes | sdkmanager "build-tools;33.0.1" "platforms;android-33" "platform-tools"
+    yes | ${ANDROID_SDK_ROOT}/cmdline-tools/latest/bin/sdkmanager "build-tools;33.0.1" "platforms;android-33" "platform-tools"
