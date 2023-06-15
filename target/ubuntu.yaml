@@ -134,6 +134,8 @@
   - command: curl -sS https://starship.rs/install.sh | sh -s -- -y
     description: Install starship.
   - command: curl -s "https://get.sdkman.io" | bash ; source "$HOME/.sdkman/bin/sdkman-init.sh"
+      ; yes | sdk install java $(sdk list java | grep ea | grep 21 | head -1 | cut
+      -d "|" -f 6)
     description: Install sdkman.
   - command: git clone https://github.com/rbenv/rbenv.git ~/.rbenv ; cd ~/.rbenv &&
       src/configure && make -C src

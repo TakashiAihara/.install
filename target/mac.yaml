@@ -98,6 +98,8 @@
   - command: curl -sS https://starship.rs/install.sh | sh -s -- -y
     description: Install starship.
   - command: curl -s "https://get.sdkman.io" | bash ; source "$HOME/.sdkman/bin/sdkman-init.sh"
+      ; yes | sdk install java $(sdk list java | grep ea | grep 21 | head -1 | cut
+      -d "|" -f 6)
     description: Install sdkman.
   - command: git clone https://github.com/rbenv/rbenv.git ~/.rbenv ; cd ~/.rbenv &&
       src/configure && make -C src
@@ -150,9 +152,9 @@
       ) -o /tmp/android_cmdlinetools.zip ; unzip /tmp/android_cmdlinetools.zip -d
       /tmp/ ; export ANDROID_HOME="/usr/local/android" ; export ANDROID_SDK_ROOT="/usr/local/android"
       ; export PATH="$PATH:$ANDROID_HOME/cmdline-tools/latest/bin" ; export PATH="$PATH:$ANDROID_HOME/platform-tools"
-      ; mkdir -p ${ANDROID_SDK_ROOT}/cmdline-tools/latest ; mv /tmp/cmdline-tools/*
-      ${ANDROID_SDK_ROOT}/cmdline-tools/latest ; sdk install java 21.ea.6-open ; yes
-      | sdkmanager "build-tools;33.0.1" "platforms;android-33" "platform-tools"
+      ; rm -rf ${ANDROID_SDK_ROOT}/cmdline-tools/latest ; mkdir -p ${ANDROID_SDK_ROOT}/cmdline-tools/latest
+      ; mv /tmp/cmdline-tools/* ${ANDROID_SDK_ROOT}/cmdline-tools/latest ; yes | ${ANDROID_SDK_ROOT}/cmdline-tools/latest/bin/sdkmanager
+      "build-tools;33.0.1" "platforms;android-33" "platform-tools"
     description: Prepare android.
 - go:
   - github.com/x-motemen/ghq@latest
