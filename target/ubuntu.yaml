@@ -184,6 +184,14 @@
     description: Apply dns settings
   - command: git clone https://github.com/theory/pgenv.git ~/.pgenv
     description: Install pgenv.
+  - command: curl $( curl https://developer.android.com/studio | xq -x '//a[@data-category="sdk_linux_download"]/@href'
+      ) -o /tmp/android_cmdlinetools.zip ; unzip /tmp/android_cmdlinetools.zip -d
+      /tmp/ ; export ANDROID_HOME="/usr/local/android" ; export ANDROID_SDK_ROOT="/usr/local/android"
+      ; export PATH="$PATH:$ANDROID_HOME/cmdline-tools/latest/bin" ; export PATH="$PATH:$ANDROID_HOME/platform-tools"
+      ; rm -rf ${ANDROID_SDK_ROOT}/cmdline-tools/latest ; mkdir -p ${ANDROID_SDK_ROOT}/cmdline-tools/latest
+      ; mv /tmp/cmdline-tools/* ${ANDROID_SDK_ROOT}/cmdline-tools/latest ; yes | ${ANDROID_SDK_ROOT}/cmdline-tools/latest/bin/sdkmanager
+      "build-tools;33.0.1" "platforms;android-33" "platform-tools"
+    description: Prepare android.
 - go:
   - github.com/x-motemen/ghq@latest
   - flags:
