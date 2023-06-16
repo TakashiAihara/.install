@@ -217,6 +217,10 @@
       ; mv /tmp/cmdline-tools/* ${ANDROID_SDK_ROOT}/cmdline-tools/latest ; yes | ${ANDROID_SDK_ROOT}/cmdline-tools/latest/bin/sdkmanager
       "build-tools;33.0.1" "platforms;android-33" "platform-tools"
     description: Prepare android.
+  - command: sh <(curl -L https://nixos.org/nix/install) --daemon --yes
+    description: Install Nix.
+  - command: nix run nixpkgs#act
+    description: Install Act.
 - go:
   - github.com/x-motemen/ghq@latest
   - flags:
