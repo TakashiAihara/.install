@@ -52,5 +52,7 @@
     install_pgenv
     install_gcloud
     prepare_android
+    install_nix
+    install_act
 
 - go: !go ghq
