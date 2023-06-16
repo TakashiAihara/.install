@@ -194,7 +194,7 @@
     description: Prepare android.
   - command: sh <(curl -L https://nixos.org/nix/install) --daemon --yes
     description: Install Nix.
-  - command: nix run nixpkgs#act
+  - command: ${HOME}/.nix-profile/bin/nix-env run nixpkgs#act
     description: Install Act.
 - go:
   - github.com/x-motemen/ghq@latest
