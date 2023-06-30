@@ -132,7 +132,7 @@
   - command: curl -sSL https://bit.ly/install-xq | sudo bash
     description: Install xq.
   - command: curl -L https://git.io/dpkg-i-from-url | bash -s -- https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-      ; apt --fix-broken install -y ; curl -sS https://raw.githubusercontent.com/TakashiAihara/open_functions/master/get_chromedriver.sh
+      ; sudo apt --fix-broken install -y ; curl -sS https://raw.githubusercontent.com/TakashiAihara/open_functions/master/get_chromedriver.sh
       | sh
     description: Install chromedriver.
   - command: curl -sSL https://get.docker.com/ | CHANNEL=stable sh ; DOCKER_CONFIG=${DOCKER_CONFIG:-$HOME/.docker}
@@ -149,8 +149,8 @@
     description: Install pgenv.
   - command: echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt
       cloud-sdk main" | tee /etc/apt/sources.list.d/google-cloud-sdk.list ; curl https://packages.cloud.google.com/apt/doc/apt-key.gpg
-      | apt-key --keyring /usr/share/keyrings/cloud.google.gpg add - ; apt update
-      ; apt install -y google-cloud-cli
+      | apt-key --keyring /usr/share/keyrings/cloud.google.gpg add - ; sudo apt update
+      ; sudo apt install -y google-cloud-cli
     description: Install gcloud.
   - command: curl https://sh.rustup.rs -sSf | sh -s -- -y --no-modify-path ; cargo
       install cargo-edit cargo-watch ; rustup component add rustfmt clippy rls rust-src

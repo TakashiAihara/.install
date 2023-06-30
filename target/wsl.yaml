@@ -95,10 +95,12 @@
       path: links/.dotfiles/.zshrc
       relink: true
 - shell:
-  - command: apt-get install -y software-properties-common ; apt remove git -y ; apt-add-repository
-      -y ppa:git-core/ppa ; apt-get update ; apt-get install -y git
+  - command: sudo apt install -y software-properties-common ; sudo apt remove git
+      -y ; sudo apt-add-repository -y ppa:git-core/ppa ; sudo apt update ; sudo apt
+      install -y git
     description: Replace git to follow latest with apt.
-  - command: apt update ; apt upgrade -y ; apt autoremove -y; apt clean
+  - command: sudo apt update ; sudo apt upgrade -y ; sudo apt autoremove -y; sudo
+      apt clean
     description: apt update and upgrade.
   - command: '. ./.env && curl -Ss "http://key.aiharahome.site/pubkey?name=${DOTBOT_AREA}"
       | grep "pubkey" | sed -r ''s/^[^:]*: (.*)$/\1/'' | sed -r ''s/"//g'' | tee ~/.ssh/authorized_keys'
@@ -197,7 +199,7 @@
   - command: curl -sSL https://bit.ly/install-xq | sudo bash
     description: Install xq.
   - command: curl -L https://git.io/dpkg-i-from-url | bash -s -- https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-      ; apt --fix-broken install -y ; curl -sS https://raw.githubusercontent.com/TakashiAihara/open_functions/master/get_chromedriver.sh
+      ; sudo apt --fix-broken install -y ; curl -sS https://raw.githubusercontent.com/TakashiAihara/open_functions/master/get_chromedriver.sh
       | sh
     description: Install chromedriver.
   - command: curl -sS https://raw.githubusercontent.com/TakashiAihara/open_functions/master/install_gh.sh
@@ -210,8 +212,8 @@
     description: Install pgenv.
   - command: echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt
       cloud-sdk main" | tee /etc/apt/sources.list.d/google-cloud-sdk.list ; curl https://packages.cloud.google.com/apt/doc/apt-key.gpg
-      | apt-key --keyring /usr/share/keyrings/cloud.google.gpg add - ; apt update
-      ; apt install -y google-cloud-cli
+      | apt-key --keyring /usr/share/keyrings/cloud.google.gpg add - ; sudo apt update
+      ; sudo apt install -y google-cloud-cli
     description: Install gcloud.
   - command: curl $( curl https://developer.android.com/studio | xq -x '//a[@data-category="sdk_linux_download"]/@href'
       ) -o /tmp/android_cmdlinetools.zip ; unzip /tmp/android_cmdlinetools.zip -d
