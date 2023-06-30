@@ -6,3 +6,7 @@
   path: links/.dotfiles/.zshrc
   create: true
   relink: true
+~/.zshenv:
+  path: links/.dotfiles/.zshenv
+  create: true
+  relink: true
