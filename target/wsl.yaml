@@ -221,6 +221,10 @@
     description: Install Nix.
   - command: ${HOME}/.nix-profile/bin/nix-env run nixpkgs#act
     description: Install Act.
+  - command: curl https://sh.rustup.rs -sSf | sh -s -- -y --no-modify-path ; cargo
+      install cargo-edit cargo-watch ; rustup component add rustfmt clippy rls rust-src
+      rust-analysis
+    description: Install Cargo.
 - go:
   - github.com/x-motemen/ghq@latest
   - flags:
