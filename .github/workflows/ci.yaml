@@ -1,9 +1,6 @@
 name: CI
 
-on:
-  push:
-    branches: ["*"]
-  merge_group:
+on: [push]
 
 jobs:
   ci:
