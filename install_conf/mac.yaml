@@ -38,6 +38,7 @@
     install_zoxide
     install_pgenv
     install_gcloud
+    install_rust
     prepare_android
 
 - go: !go ghq
