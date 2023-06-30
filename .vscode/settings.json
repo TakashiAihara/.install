@@ -52,6 +52,7 @@
   "cSpell.words": [
     "alacritty",
     "chromedriver",
+    "clippy",
     "dein",
     "DOTBOT",
     "dotenv",
@@ -64,6 +65,8 @@
     "pyenv",
     "rclone",
     "resolv",
+    "rustfmt",
+    "rustup",
     "sdkman",
     "zinit",
     "zoxide"
