@@ -69,6 +69,10 @@
       create: true
       path: links/.dotfiles/.zsh
       relink: true
+    ~/.zshenv:
+      create: true
+      path: links/.dotfiles/.zshenv
+      relink: true
     ~/.zshrc:
       create: true
       path: links/.dotfiles/.zshrc
