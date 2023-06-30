@@ -1,1 +1,2 @@
 sdk update
+rustup update
