@@ -23,7 +23,6 @@
 - shell: !shell register_authorized_key
     install_zinit
     link_fonts
-    install_starship
     install_sdkman
     install_rbenv
     install_go
@@ -40,6 +39,7 @@
     install_gcloud
     install_rust
     prepare_android
+    install_starship
 
 - go: !go ghq
 
