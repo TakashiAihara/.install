@@ -37,7 +37,6 @@
     install_zinit
 
 - shell: !shell link_fonts
-    install_starship
     install_sdkman
     install_rbenv
     install_go
@@ -55,5 +54,6 @@
     install_nix
     install_act
     install_rust
+    install_starship
 
 - go: !go ghq

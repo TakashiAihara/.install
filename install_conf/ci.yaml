@@ -23,7 +23,6 @@
 - shell: !shell update_locale
     zsh_default_shell
     install_zinit
-    install_starship
     install_sdkman
     install_rbenv
     install_go
@@ -43,5 +42,6 @@
     install_nix
     install_act
     install_rust
+    install_starship
 
 - go: !go ghq
