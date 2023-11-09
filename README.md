@@ -6,6 +6,22 @@ This installer contains init process for each OS. Mac/Ubuntu/WSL(Ubuntu)/Windows
 
 Use submodules for Linking private settings.
 
+## Prepare
+
+### For WSL
+
+```shell
+apt update
+apt install -y gh python3
+
+exec -l $shell
+update-alternatives --install /usr/bin/python python /usr/bin/python3 1
+
+gh auth login
+
+git clone https://github.com/TakashiAihara/.install
+```
+
 ## Usage
 
 ### Commandline
