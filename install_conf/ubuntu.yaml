@@ -43,7 +43,6 @@
     apply_dns_settings
     install_pgenv
     prepare_android
-    install_nix
     install_act
     install_rust
 

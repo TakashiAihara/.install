@@ -59,7 +59,6 @@
     "dotfiles",
     "gcloud",
     "karabiner",
-    "nixpkgs",
     "nvim",
     "pgenv",
     "pyenv",
