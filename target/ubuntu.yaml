@@ -14,8 +14,6 @@
     description: Sync .dotfiles.
   - command: git submodule update --init --recursive links/etc
     description: Sync etc.
-  - command: git submodule update --init --recursive links/rclone
-    description: Sync rclone.
 - clean:
   - '~'
 - link:
@@ -34,10 +32,6 @@
     ~/.config/nvim:
       create: true
       path: links/.dotfiles/.config/nvim
-      relink: true
-    ~/.config/rclone:
-      create: true
-      path: links/rclone
       relink: true
     ~/.config/starship.toml:
       create: true

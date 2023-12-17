@@ -16,8 +16,6 @@
     description: Sync etc.
   - command: git submodule update --init --recursive links/.ssh
     description: Sync .ssh.
-  - command: git submodule update --init --recursive links/rclone
-    description: Sync rclone.
 - clean:
   - '~'
 - create:
@@ -49,10 +47,6 @@
     ~/.config/nvim:
       create: true
       path: links/.dotfiles/.config/nvim
-      relink: true
-    ~/.config/rclone:
-      create: true
-      path: links/rclone
       relink: true
     ~/.config/starship.toml:
       create: true
