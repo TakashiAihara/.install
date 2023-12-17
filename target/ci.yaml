@@ -190,9 +190,8 @@
       ; mv /tmp/cmdline-tools/* ${ANDROID_SDK_ROOT}/cmdline-tools/latest ; yes | ${ANDROID_SDK_ROOT}/cmdline-tools/latest/bin/sdkmanager
       "build-tools;33.0.1" "platforms;android-33" "platform-tools"
     description: Prepare android.
-  - command: sh <(curl -L https://nixos.org/nix/install) --daemon --yes
-    description: Install Nix.
-  - command: ${HOME}/.nix-profile/bin/nix-env run nixpkgs#act
+  - command: curl -s https://raw.githubusercontent.com/nektos/act/master/install.sh
+      | sudo bash -s -- -b /usr/local/bin
     description: Install Act.
   - command: curl https://sh.rustup.rs -sSf | sh -s -- -y --no-modify-path ; cargo
       install cargo-edit cargo-watch ; rustup component add rustfmt clippy rls rust-src

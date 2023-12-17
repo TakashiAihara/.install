@@ -200,8 +200,6 @@
     description: Apply dns settings
   - command: git clone https://github.com/theory/pgenv.git ~/.pgenv
     description: Install pgenv.
-  - command: sh <(curl -L https://nixos.org/nix/install) --daemon --yes
-    description: Install Nix.
 - go:
   - github.com/x-motemen/ghq@latest
   - flags:
