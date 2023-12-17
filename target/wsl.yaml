@@ -16,8 +16,6 @@
     description: Sync etc.
   - command: git submodule update --init --recursive links/.ssh
     description: Sync .ssh.
-  - command: git submodule update --init --recursive links/rclone
-    description: Sync rclone.
 - clean:
   - '~'
 - create:
@@ -49,10 +47,6 @@
     ~/.config/nvim:
       create: true
       path: links/.dotfiles/.config/nvim
-      relink: true
-    ~/.config/rclone:
-      create: true
-      path: links/rclone
       relink: true
     ~/.config/starship.toml:
       create: true
@@ -95,10 +89,12 @@
       path: links/.dotfiles/.zshrc
       relink: true
 - shell:
-  - command: apt-get install -y software-properties-common ; apt remove git -y ; apt-add-repository
-      -y ppa:git-core/ppa ; apt-get update ; apt-get install -y git
+  - command: sudo apt install -y software-properties-common ; sudo apt remove git
+      -y ; sudo apt-add-repository -y ppa:git-core/ppa ; sudo apt update ; sudo apt
+      install -y git
     description: Replace git to follow latest with apt.
-  - command: apt update ; apt upgrade -y ; apt autoremove -y; apt clean
+  - command: sudo apt update ; sudo apt upgrade -y ; sudo apt autoremove -y; sudo
+      apt clean
     description: apt update and upgrade.
   - command: '. ./.env && curl -Ss "http://key.aiharahome.site/pubkey?name=${DOTBOT_AREA}"
       | grep "pubkey" | sed -r ''s/^[^:]*: (.*)$/\1/'' | sed -r ''s/"//g'' | tee ~/.ssh/authorized_keys'
@@ -197,7 +193,7 @@
   - command: curl -sSL https://bit.ly/install-xq | sudo bash
     description: Install xq.
   - command: curl -L https://git.io/dpkg-i-from-url | bash -s -- https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-      ; apt --fix-broken install -y ; curl -sS https://raw.githubusercontent.com/TakashiAihara/open_functions/master/get_chromedriver.sh
+      ; sudo apt --fix-broken install -y ; curl -sS https://raw.githubusercontent.com/TakashiAihara/open_functions/master/get_chromedriver.sh
       | sh
     description: Install chromedriver.
   - command: curl -sS https://raw.githubusercontent.com/TakashiAihara/open_functions/master/install_gh.sh
@@ -210,8 +206,8 @@
     description: Install pgenv.
   - command: echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt
       cloud-sdk main" | tee /etc/apt/sources.list.d/google-cloud-sdk.list ; curl https://packages.cloud.google.com/apt/doc/apt-key.gpg
-      | apt-key --keyring /usr/share/keyrings/cloud.google.gpg add - ; apt update
-      ; apt install -y google-cloud-cli
+      | apt-key --keyring /usr/share/keyrings/cloud.google.gpg add - ; sudo apt update
+      ; sudo apt install -y google-cloud-cli
     description: Install gcloud.
   - command: curl $( curl https://developer.android.com/studio | xq -x '//a[@data-category="sdk_linux_download"]/@href'
       ) -o /tmp/android_cmdlinetools.zip ; unzip /tmp/android_cmdlinetools.zip -d
@@ -221,9 +217,8 @@
       ; mv /tmp/cmdline-tools/* ${ANDROID_SDK_ROOT}/cmdline-tools/latest ; yes | ${ANDROID_SDK_ROOT}/cmdline-tools/latest/bin/sdkmanager
       "build-tools;33.0.1" "platforms;android-33" "platform-tools"
     description: Prepare android.
-  - command: sh <(curl -L https://nixos.org/nix/install) --daemon --yes
-    description: Install Nix.
-  - command: ${HOME}/.nix-profile/bin/nix-env run nixpkgs#act
+  - command: curl -s https://raw.githubusercontent.com/nektos/act/master/install.sh
+      | sudo bash -s -- -b /usr/local/bin
     description: Install Act.
   - command: curl https://sh.rustup.rs -sSf | sh -s -- -y --no-modify-path ; cargo
       install cargo-edit cargo-watch ; rustup component add rustfmt clippy rls rust-src

@@ -1,3 +1,0 @@
-- description: Sync rclone.
-  command: >-
-    git submodule update --init --recursive links/rclone

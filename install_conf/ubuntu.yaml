@@ -2,14 +2,12 @@
 
 - shell: !submodule .dotfiles
     etc
-    rclone
 
 - clean: ["~"]
 
 - link: !link dein
     git
     nvim
-    rclone
     ssh_config
     sshd_config
     starship
@@ -42,7 +40,6 @@
     apply_dns_settings
     install_pgenv
     prepare_android
-    install_nix
     install_act
     install_rust
     install_starship

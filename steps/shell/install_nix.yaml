@@ -1,3 +1,0 @@
-- description: Install Nix.
-  command: >-
-    sh <(curl -L https://nixos.org/nix/install) --daemon --yes

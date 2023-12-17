@@ -8,7 +8,6 @@
 - link: !link dein
     git
     nvim
-    rclone
     ssh_config
     sshd_config
     starship
@@ -41,7 +40,6 @@
     install_zoxide
     apply_dns_settings
     install_pgenv
-    install_nix
     install_starship
 
 - go: !go ghq

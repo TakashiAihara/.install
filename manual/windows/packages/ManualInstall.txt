@@ -1,0 +1,9 @@
+WSL
+SuperDisplay
+Nvidia
+Npcap
+Origin
+Firefoo
+Bluestacks
+Notion
+CLaunch

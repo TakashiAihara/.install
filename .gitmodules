@@ -22,6 +22,3 @@
 [submodule "links/etc"]
 	path = links/etc
 	url = https://github.com/TakashiAihara/etc
-[submodule "links/rclone"]
-	path = links/rclone
-	url = https://github.com/TakashiAihara/rclone
