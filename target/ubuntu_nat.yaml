@@ -45,10 +45,6 @@
       create: true
       path: links/.dotfiles/.config/nvim
       relink: true
-    ~/.config/rclone:
-      create: true
-      path: links/rclone
-      relink: true
     ~/.config/starship.toml:
       create: true
       path: links/.dotfiles/.config/starship.toml
