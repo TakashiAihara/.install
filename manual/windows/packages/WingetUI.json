@@ -1,0 +1,488 @@
+{
+  ".net tool": {
+    "apps": []
+  },
+  "chocolatey": {
+    "apps": [
+      {
+        "Name": "origin"
+      },
+      {
+        "Name": "nmap"
+      },
+      {
+        "Name": "netfx-4.6.2"
+      },
+      {
+        "Name": "multimonitortool"
+      },
+      {
+        "Name": "logitech-options-plus"
+      },
+      {
+        "Name": "logioptionsplus"
+      },
+      {
+        "Name": "KB3035131"
+      },
+      {
+        "Name": "KB3033929"
+      },
+      {
+        "Name": "KB2999226"
+      },
+      {
+        "Name": "KB2919442"
+      },
+      {
+        "Name": "KB2919355"
+      },
+      {
+        "Name": "haxm"
+      },
+      {
+        "Name": "googledrive"
+      },
+      {
+        "Name": "font-hackgen-nerd"
+      },
+      {
+        "Name": "font-hackgen"
+      },
+      {
+        "Name": "flutter"
+      },
+      {
+        "Name": "dotnetfx"
+      },
+      {
+        "Name": "dotnet4.7"
+      },
+      {
+        "Name": "dotnet4.6.2"
+      },
+      {
+        "Name": "docker-compose"
+      },
+      {
+        "Name": "docker-cli"
+      },
+      {
+        "Name": "dns-benchmark"
+      },
+      {
+        "Name": "clickUp-official"
+      },
+      {
+        "Name": "chromium"
+      },
+      {
+        "Name": "chocolatey-windowsupdate.extension"
+      },
+      {
+        "Name": "chocolatey-misc-helpers.extension"
+      },
+      {
+        "Name": "chocolatey-font-helpers.extension"
+      },
+      {
+        "Name": "chocolatey-dotnetfx.extension"
+      },
+      {
+        "Name": "chocolatey-core.extension"
+      },
+      {
+        "Name": "chocolatey-compatibility.extension"
+      },
+      {
+        "Name": "chocolatey"
+      },
+      {
+        "Name": "choco-cleaner"
+      },
+      {
+        "Name": "autohotkey.portable"
+      },
+      {
+        "Name": "autohotkey.install"
+      },
+      {
+        "Name": "autohotkey"
+      },
+      {
+        "Name": "appium-desktop"
+      }
+    ]
+  },
+  "npm": {
+    "apps": []
+  },
+  "pip": {
+    "apps": []
+  },
+  "scoop": {
+    "apps": []
+  },
+  "winget": {
+    "$schema": "https://aka.ms/winget-packages.schema.2.0.json",
+    "CreationDate": "2023-12-17 19:32:14.382607",
+    "Sources": [
+      {
+        "Packages": [
+          {
+            "PackageIdentifier": "9WZDNCRFJ364"
+          },
+          {
+            "PackageIdentifier": "XP89DCGQ3K6VLD"
+          },
+          {
+            "PackageIdentifier": "9P24Z53HC1JR"
+          },
+          {
+            "PackageIdentifier": "9PKTQ5699M62"
+          },
+          {
+            "PackageIdentifier": "Microsoft.AppInstaller"
+          },
+          {
+            "PackageIdentifier": "Zoom.Zoom"
+          },
+          {
+            "PackageIdentifier": "yt-dlp.yt-dlp"
+          },
+          {
+            "PackageIdentifier": "youtube-dl.youtube-dl"
+          },
+          {
+            "PackageIdentifier": "Xmind.Xmind.8"
+          },
+          {
+            "PackageIdentifier": "WiresharkFoundation.Wireshark"
+          },
+          {
+            "PackageIdentifier": "WinSCP.WinSCP"
+          },
+          {
+            "PackageIdentifier": "WinMerge.WinMerge"
+          },
+          {
+            "PackageIdentifier": "SomePythonThings.WingetUIStore"
+          },
+          {
+            "PackageIdentifier": "Microsoft.WindowsTerminal"
+          },
+          {
+            "PackageIdentifier": "wez.wezterm"
+          },
+          {
+            "PackageIdentifier": "Google.VPNByGoogleOne"
+          },
+          {
+            "PackageIdentifier": "VideoLAN.VLC"
+          },
+          {
+            "PackageIdentifier": "Microsoft.VisualStudio.2022.Community"
+          },
+          {
+            "PackageIdentifier": "vim.vim"
+          },
+          {
+            "PackageIdentifier": "Canonical.Ubuntu.2204"
+          },
+          {
+            "PackageIdentifier": "Ubisoft.Connect"
+          },
+          {
+            "PackageIdentifier": "Google.Terraformer"
+          },
+          {
+            "PackageIdentifier": "Telegram.TelegramDesktop"
+          },
+          {
+            "PackageIdentifier": "Valve.Steam"
+          },
+          {
+            "PackageIdentifier": "SlackTechnologies.Slack"
+          },
+          {
+            "PackageIdentifier": "OpenWhisperSystems.Signal"
+          },
+          {
+            "PackageIdentifier": "ShareX.ShareX"
+          },
+          {
+            "PackageIdentifier": "3T.Robo3T"
+          },
+          {
+            "PackageIdentifier": "RealVNC.VNCViewer"
+          },
+          {
+            "PackageIdentifier": "RealtekSemiconductorCorp.RealtekAudioContro…"
+          },
+          {
+            "PackageIdentifier": "suse.RancherDesktop"
+          },
+          {
+            "PackageIdentifier": "Microsoft.PowerToys.ImageResizerContextMenu…"
+          },
+          {
+            "PackageIdentifier": "Microsoft.PowerShell"
+          },
+          {
+            "PackageIdentifier": "g07cha.pomodoro"
+          },
+          {
+            "PackageIdentifier": "Evolus.Pencil"
+          },
+          {
+            "PackageIdentifier": "ownCloud.ownCloudDesktop"
+          },
+          {
+            "PackageIdentifier": "Obsidian.Obsidian"
+          },
+          {
+            "PackageIdentifier": "OBSProject.OBSStudio"
+          },
+          {
+            "PackageIdentifier": "Nvidia.GeForceExperience"
+          },
+          {
+            "PackageIdentifier": "Notion.Notion"
+          },
+          {
+            "PackageIdentifier": "Insecure.Nmap"
+          },
+          {
+            "PackageIdentifier": "Mozilla.Firefox"
+          },
+          {
+            "PackageIdentifier": "Mojang.MinecraftLauncher"
+          },
+          {
+            "PackageIdentifier": "Microsoft.DotNet.DesktopRuntime.6"
+          },
+          {
+            "PackageIdentifier": "Microsoft.DotNet.DesktopRuntime.6"
+          },
+          {
+            "PackageIdentifier": "Microsoft.DotNet.DesktopRuntime.6"
+          },
+          {
+            "PackageIdentifier": "Microsoft.VisualStudioCode.Insiders"
+          },
+          {
+            "PackageIdentifier": "Microsoft.VisualStudioCode"
+          },
+          {
+            "PackageIdentifier": "Microsoft.VCRedist.2015+.x64"
+          },
+          {
+            "PackageIdentifier": "Microsoft.VCRedist.2015+.x86"
+          },
+          {
+            "PackageIdentifier": "Microsoft.VCRedist.2013.x64"
+          },
+          {
+            "PackageIdentifier": "Microsoft.VCRedist.2013.x64"
+          },
+          {
+            "PackageIdentifier": "Microsoft.VCRedist.2013.x64"
+          },
+          {
+            "PackageIdentifier": "Microsoft.VCRedist.2013.x64"
+          },
+          {
+            "PackageIdentifier": "Microsoft.VCRedist.2012.x86"
+          },
+          {
+            "PackageIdentifier": "Microsoft.VCRedist.2012.x64"
+          },
+          {
+            "PackageIdentifier": "Microsoft.VCRedist.2010.x86"
+          },
+          {
+            "PackageIdentifier": "Microsoft.VCRedist.2010.x64"
+          },
+          {
+            "PackageIdentifier": "Microsoft.Teams"
+          },
+          {
+            "PackageIdentifier": "Microsoft.OneDrive"
+          },
+          {
+            "PackageIdentifier": "Microsoft.EdgeWebView2Runtime"
+          },
+          {
+            "PackageIdentifier": "Microsoft.Edge"
+          },
+          {
+            "PackageIdentifier": "Microsoft.DotNet.AspNetCore.7"
+          },
+          {
+            "PackageIdentifier": "Microsoft.Office"
+          },
+          {
+            "PackageIdentifier": "MarkText.MarkText"
+          },
+          {
+            "PackageIdentifier": "Logitech.OptionsPlus"
+          },
+          {
+            "PackageIdentifier": "MicrosoftCorporationII.WindowsSubsystemForL…"
+          },
+          {
+            "PackageIdentifier": "XPFCC4CD725961"
+          },
+          {
+            "PackageIdentifier": "kalilinux.kalilinux"
+          },
+          {
+            "PackageIdentifier": "AppWork.JDownloader"
+          },
+          {
+            "PackageIdentifier": "Apple.iTunes"
+          },
+          {
+            "PackageIdentifier": "Intel.IntelDriverAndSupportAssistant"
+          },
+          {
+            "PackageIdentifier": "SourceFoundry.HackFonts"
+          },
+          {
+            "PackageIdentifier": "Graphviz.Graphviz"
+          },
+          {
+            "PackageIdentifier": "Google.CloudSDK"
+          },
+          {
+            "PackageIdentifier": "Google.Chrome"
+          },
+          {
+            "PackageIdentifier": "GOG.Galaxy"
+          },
+          {
+            "PackageIdentifier": "GitHub.cli"
+          },
+          {
+            "PackageIdentifier": "Git.Git"
+          },
+          {
+            "PackageIdentifier": "GIMP.GIMP"
+          },
+          {
+            "PackageIdentifier": "PeterPawlowski.foobar2000"
+          },
+          {
+            "PackageIdentifier": "Figma.FigmaAgent"
+          },
+          {
+            "PackageIdentifier": "Figma.Figma"
+          },
+          {
+            "PackageIdentifier": "Gyan.FFmpeg"
+          },
+          {
+            "PackageIdentifier": "FastStone.Viewer"
+          },
+          {
+            "PackageIdentifier": "EpicGames.EpicGamesLauncher"
+          },
+          {
+            "PackageIdentifier": "Docker.DockerDesktop"
+          },
+          {
+            "PackageIdentifier": "Discord.Discord"
+          },
+          {
+            "PackageIdentifier": "Microsoft.DevHome"
+          },
+          {
+            "PackageIdentifier": "Dell.DisplayManager"
+          },
+          {
+            "PackageIdentifier": "dbeaver.dbeaver"
+          },
+          {
+            "PackageIdentifier": "DBBrowserForSQLite.DBBrowserForSQLite"
+          },
+          {
+            "PackageIdentifier": "CrystalDewWorld.CrystalDiskMark"
+          },
+          {
+            "PackageIdentifier": "CrystalDewWorld.CrystalDiskInfo"
+          },
+          {
+            "PackageIdentifier": "Cryptomator.Cryptomator"
+          },
+          {
+            "PackageIdentifier": "CPUID.CPU-Z"
+          },
+          {
+            "PackageIdentifier": "Clockify.Clockify"
+          },
+          {
+            "PackageIdentifier": "ClickUp.ClickUp"
+          },
+          {
+            "PackageIdentifier": "Chocolatey.ChocolateyGUI"
+          },
+          {
+            "PackageIdentifier": "Chocolatey.Chocolatey"
+          },
+          {
+            "PackageIdentifier": "calibre.calibre"
+          },
+          {
+            "PackageIdentifier": "Bruno.Bruno"
+          },
+          {
+            "PackageIdentifier": "Box.Box"
+          },
+          {
+            "PackageIdentifier": "BlueStack.BlueStacks"
+          },
+          {
+            "PackageIdentifier": "Bitdefender.Bitdefender"
+          },
+          {
+            "PackageIdentifier": "AutoHotkey.AutoHotkey"
+          },
+          {
+            "PackageIdentifier": "Twilio.Authy"
+          },
+          {
+            "PackageIdentifier": "Audacity.Audacity"
+          },
+          {
+            "PackageIdentifier": "JSFoundation.Appium"
+          },
+          {
+            "PackageIdentifier": "Google.AndroidStudio"
+          },
+          {
+            "PackageIdentifier": "Amazon.Music"
+          },
+          {
+            "PackageIdentifier": "Amazon.Kindle"
+          },
+          {
+            "PackageIdentifier": "Alacritty.Alacritty"
+          },
+          {
+            "PackageIdentifier": "7zip.7zip"
+          },
+          {
+            "PackageIdentifier": "XP99C9G0KRDZ27"
+          }
+        ],
+        "SourceDetails": {
+          "Argument": "https://cdn.winget.microsoft.com/cache",
+          "Identifier": "Microsoft.Winget.Source_8wekyb3d8bbwe",
+          "Name": "winget",
+          "Type": "Microsoft.PreIndexed.Package"
+        }
+      }
+    ],
+    "WinGetVersion": "v1.6.2771  "
+  }
+}
