@@ -9,7 +9,7 @@ export DOTBOT_ARCH=${ARCH:-wsl}
 
 BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-git submodule update --init --recursive "${DOTBOT_PLUGINS_DIR}/${DOTBOT}"
+git submodule update --init --recursive --merge "${DOTBOT_PLUGINS_DIR}/${DOTBOT}"
 
 "${BASE_DIR}/${DOTBOT_PLUGINS_DIR}/${DOTBOT}/${DOTBOT_BIN}" \
   -d "${BASE_DIR}" \

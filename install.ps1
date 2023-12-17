@@ -33,7 +33,7 @@ function ApplyOptions {
 }
 
 function UpdateDotbot {
-    git submodule update --init --recursive $(Join-Path $env:DOTBOT_PLUGINS_DIR -ChildPath $env:DOTBOT)
+    git submodule update --init --recursive --merge $(Join-Path $env:DOTBOT_PLUGINS_DIR -ChildPath $env:DOTBOT)
 
 }
 
