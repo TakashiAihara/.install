@@ -8,7 +8,6 @@
 - link: !link dein
     git
     nvim
-    rclone
     ssh_config
     sshd_config
     starship

@@ -1,4 +1,0 @@
-~/.config/rclone:
-  path: links/rclone
-  create: true
-  relink: true
