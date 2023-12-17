@@ -3,7 +3,6 @@
 - shell: !submodule .dotfiles
     etc
     .ssh
-    rclone
 
 - clean: ["~"]
 
@@ -12,7 +11,6 @@
     fonts
     git
     nvim
-    rclone
     ssh
     ssh_config
     sshd_config

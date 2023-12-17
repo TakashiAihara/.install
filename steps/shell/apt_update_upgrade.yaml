@@ -1,6 +1,6 @@
 - description: apt update and upgrade.
   command: >-
-    apt update ;
-    apt upgrade -y ;
-    apt autoremove -y;
-    apt clean
+    sudo apt update ;
+    sudo apt upgrade -y ;
+    sudo apt autoremove -y;
+    sudo apt clean
