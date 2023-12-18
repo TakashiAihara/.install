@@ -12,6 +12,8 @@
 - shell:
   - command: git submodule update --init --recursive links/.dotfiles
     description: Sync .dotfiles.
+  - command: git submodule update --init --recursive links/etc
+    description: Sync etc.
 - clean:
   - '~'
 - link:
@@ -70,9 +72,6 @@
   - command: sudo apt update ; sudo apt upgrade -y ; sudo apt autoremove -y; sudo
       apt clean
     description: apt update and upgrade.
-  - command: '. ./.env && curl -Ss "http://key.aiharahome.site/pubkey?name=${DOTBOT_AREA}"
-      | grep "pubkey" | sed -r ''s/^[^:]*: (.*)$/\1/'' | sed -r ''s/"//g'' | tee ~/.ssh/authorized_keys'
-    description: Register authorized_key.
 - apt:
   - autoconf
   - automake
@@ -173,10 +172,6 @@
   - command: curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh
       | bash
     description: Install zoxide.
-  - command: rm /etc/systemd/resolved.conf ; cp ~/.install/settings/systemd/resolved.conf
-      /etc/systemd/resolved.conf ; rm /etc/resolv.conf ; ln -s /run/systemd/resolve/resolv.conf
-      /etc/resolv.conf ; systemctl restart systemd-resolved
-    description: Apply dns settings
   - command: git clone https://github.com/theory/pgenv.git ~/.pgenv
     description: Install pgenv.
   - command: curl $( curl https://developer.android.com/studio | xq -x '//a[@data-category="sdk_linux_download"]/@href'
