@@ -93,8 +93,6 @@
     description: Install zinit.
   - command: fc-cache -fv
     description: link fonts.
-  - command: curl -sS https://starship.rs/install.sh | sh -s -- -y
-    description: Install starship.
   - command: curl -s "https://get.sdkman.io" | bash ; source "$HOME/.sdkman/bin/sdkman-init.sh"
       ; yes | sdk install java $(sdk list java | grep ea | grep 21 | head -1 | cut
       -d "|" -f 6)
@@ -108,11 +106,10 @@
       | tail -1) --default ; gvm use $(gvm listall | grep "go" | grep -v "rc" | tail
       -1)
     description: Install latest go through gvm.
-  - command: curl https://pyenv.run | bash ; export PYENV_ROOT="$HOME/.pyenv" ; command
-      -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH" ; eval "$(pyenv init
-      -)" ; pyenv install $( pyenv install --list | grep -E -v "[a-zA-Z]" | tail -1
-      ) ; pyenv global $( pyenv install --list | grep -E -v "[a-zA-Z]" | tail -1 )
-      ; pyenv rehash
+  - command: curl https://pyenv.run | bash ; export PYENV_ROOT="$HOME/.pyenv" ; export
+      PATH="$PYENV_ROOT/bin:$PATH" ; eval "$(pyenv init -)" ; pyenv install $( pyenv
+      install --list | grep -E -v "[a-zA-Z]" | tail -1 ) ; pyenv global $( pyenv install
+      --list | grep -E -v "[a-zA-Z]" | tail -1 ) ; pyenv rehash
     description: Install pyenv.
   - command: curl -sSL https://install.python-poetry.org | python3 -
     description: Install poetry.
@@ -158,6 +155,8 @@
       ; mv /tmp/cmdline-tools/* ${ANDROID_SDK_ROOT}/cmdline-tools/latest ; yes | ${ANDROID_SDK_ROOT}/cmdline-tools/latest/bin/sdkmanager
       "build-tools;33.0.1" "platforms;android-33" "platform-tools"
     description: Prepare android.
+  - command: curl -sS https://starship.rs/install.sh | sh -s -- -y
+    description: Install starship.
 - go:
   - github.com/x-motemen/ghq@latest
   - flags:
