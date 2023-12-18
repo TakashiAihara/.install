@@ -1,0 +1,45 @@
+- defaults: !defaults ubuntu
+
+- shell: !submodule .dotfiles
+    etc
+
+- clean: ["~"]
+
+- link: !link dein
+    git
+    nvim
+    ssh_config
+    sshd_config
+    starship
+    tmux
+    zsh
+
+- shell: !shell avoid_restart_service_confirm
+    replace_git_latest
+    apt_update_upgrade
+
+- apt: !apt ubuntu
+
+- shell: !shell update_locale
+    zsh_default_shell
+    install_zinit
+    install_sdkman
+    install_rbenv
+    install_go
+    install_pyenv
+    install_poetry
+    install_node
+    install_fzf
+    install_xq
+    install_chromedriver
+    install_gh
+    modify_ufw
+    install_docker
+    install_zoxide
+    install_pgenv
+    prepare_android
+    install_act
+    install_rust
+    install_starship
+
+- go: !go ghq
