@@ -41,7 +41,6 @@
     "!link",
     "!shell",
     "!ps",
-    "!go",
     "!apt",
     "!brewfile",
     "!submodule"
