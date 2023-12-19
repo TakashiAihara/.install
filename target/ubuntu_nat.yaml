@@ -156,6 +156,8 @@
       | tail -1) --default ; gvm use $(gvm listall | grep "go" | grep -v "rc" | tail
       -1)
     description: Install latest go through gvm.
+  - command: go install github.com/x-motemen/ghq@latest
+    description: Install ghq.
   - command: curl https://pyenv.run | bash ; export PYENV_ROOT="$HOME/.pyenv" ; export
       PATH="$PYENV_ROOT/bin:$PATH" ; eval "$(pyenv init -)" ; pyenv install $( pyenv
       install --list | grep -E -v "[a-zA-Z]" | tail -1 ) ; pyenv global $( pyenv install
@@ -177,7 +179,7 @@
       | sh
     description: Install chromedriver.
   - command: curl -sS https://raw.githubusercontent.com/TakashiAihara/open_functions/master/install_gh.sh
-      | sh
+      | sh ; gh extension install maggie-j-liu/gh-star ; gh extension install gabe565/gh-profile
     description: Install gh.
   - command: ufw default deny ; ufw allow from 192.168.0.0/24 ; ufw allow ssh ; ufw
       allow http ; ufw allow https ; ufw logging low ; ufw --force enable ; ufw reload
@@ -195,10 +197,3 @@
     description: Install pgenv.
   - command: curl -sS https://starship.rs/install.sh | sh -s -- -y
     description: Install starship.
-- go:
-  - github.com/x-motemen/ghq@latest
-  - flags:
-    - -v
-    - -u
-    stderr: true
-    stdout: true
