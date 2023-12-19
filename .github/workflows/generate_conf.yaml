@@ -1,24 +1,26 @@
-name: generate_target
+name: Generate Target Conf
 
-on: [push]
+on:
+  - push
+
+env:
+  PYTHON_VERSION: 3.11.0
 
 jobs:
-  generate_target:
+  generate:
     runs-on: ubuntu-latest
-    name: generator
-    strategy:
-      matrix:
-        python-version: [3.11.0]
+    permissions:
+      contents: write
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
 
-      - name: Set up Python ${{ matrix.python-version }}
+      - name: Set up Python ${{ env.PYTHON_VERSION }}
         uses: actions/setup-python@v4
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: ${{ env.PYTHON_VERSION }}
 
       - name: Install Dependencies
         run: |
@@ -30,6 +32,6 @@ jobs:
           python utils/generate.py install
 
       - name: Auto Commit
-        uses: stefanzweifel/git-auto-commit-action@v4
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Generate target conf
