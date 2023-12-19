@@ -26,6 +26,7 @@
     install_sdkman
     install_rbenv
     install_go
+    install_ghq
     install_pyenv
     install_poetry
     install_node
@@ -42,5 +43,3 @@
     install_act
     install_rust
     install_starship
-
-- go: !go ghq
