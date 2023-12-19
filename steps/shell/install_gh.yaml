@@ -1,3 +1,5 @@
 - description: Install gh.
   command: >-
-    curl -sS https://raw.githubusercontent.com/TakashiAihara/open_functions/master/install_gh.sh | sh
+    curl -sS https://raw.githubusercontent.com/TakashiAihara/open_functions/master/install_gh.sh | sh ;
+    gh extension install maggie-j-liu/gh-star ;
+    gh extension install gabe565/gh-profile
