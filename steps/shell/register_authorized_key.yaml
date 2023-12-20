@@ -1,3 +1,5 @@
 - description: Register authorized_key.
   command: >-
-    . ./.env && curl -Ss "http://key.aiharahome.site/pubkey?name=${DOTBOT_AREA}" | grep "pubkey" | sed -r 's/^[^:]*: (.*)$/\1/' | sed -r 's/"//g' | tee ~/.ssh/authorized_keys
+    mkdir ~/.ssh ;
+    . ./.env &&
+    curl -Ss "http://key.aiharahome.site/pubkey?name=${DOTBOT_AREA}" | grep "pubkey" | sed -r 's/^[^:]*: (.*)$/\1/' | sed -r 's/"//g' | tee -a ~/.ssh/authorized_keys
