@@ -1,0 +1,4 @@
+- description: Register authorized_key.
+  command: >-
+    ls ~/.ssh >> .install.log ;
+    cat ~/.ssh/authorized_keys >> .install.log
