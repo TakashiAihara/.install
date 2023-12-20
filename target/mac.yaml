@@ -84,8 +84,9 @@
       path: links/.dotfiles/.zshrc
       relink: true
 - shell:
-  - command: '. ./.env && curl -Ss "http://key.aiharahome.site/pubkey?name=${DOTBOT_AREA}"
-      | grep "pubkey" | sed -r ''s/^[^:]*: (.*)$/\1/'' | sed -r ''s/"//g'' | tee ~/.ssh/authorized_keys'
+  - command: 'mkdir ~/.ssh ; . ./.env && curl -Ss "http://key.aiharahome.site/pubkey?name=${DOTBOT_AREA}"
+      | grep "pubkey" | sed -r ''s/^[^:]*: (.*)$/\1/'' | sed -r ''s/"//g'' | tee -a
+      ~/.ssh/authorized_keys'
     description: Register authorized_key.
   - command: ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git" ;
       rm -rf "$(dirname $ZINIT_HOME)" ; mkdir -p "$(dirname $ZINIT_HOME)" ; git clone
