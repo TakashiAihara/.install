@@ -1,0 +1,5 @@
+- description: Install deno via asdf.
+  command: >-
+    asdf plugin add deno ;
+    asdf install deno latest ;
+    asdf set -u deno latest

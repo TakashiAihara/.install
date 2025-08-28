@@ -1,0 +1,5 @@
+- description: Install minikube via asdf.
+  command: >-
+    asdf plugin add minikube ;
+    asdf install minikube latest ;
+    asdf set -u minikube latest

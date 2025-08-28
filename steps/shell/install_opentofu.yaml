@@ -1,0 +1,5 @@
+- description: Install opentofu via asdf.
+  command: >-
+    asdf plugin add opentofu ;
+    asdf install opentofu latest ;
+    asdf set -u opentofu latest

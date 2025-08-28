@@ -1,0 +1,5 @@
+- description: Install liquibase via asdf.
+  command: >-
+    asdf plugin add liquibase ;
+    asdf install liquibase latest ;
+    asdf set -u liquibase latest

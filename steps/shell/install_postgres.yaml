@@ -1,0 +1,5 @@
+- description: Install postgres via asdf.
+  command: >-
+    asdf plugin add postgres ;
+    asdf install postgres latest ;
+    asdf set -u postgres latest

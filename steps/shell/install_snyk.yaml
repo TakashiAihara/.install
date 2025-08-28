@@ -1,0 +1,5 @@
+- description: Install snyk via asdf.
+  command: >-
+    asdf plugin add snyk ;
+    asdf install snyk latest ;
+    asdf set -u snyk latest

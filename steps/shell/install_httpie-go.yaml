@@ -1,0 +1,5 @@
+- description: Install httpie-go via asdf.
+  command: >-
+    asdf plugin add httpie-go ;
+    asdf install httpie-go latest ;
+    asdf set -u httpie-go latest

@@ -1,0 +1,5 @@
+- description: Install memcached via asdf.
+  command: >-
+    asdf plugin add memcached ;
+    asdf install memcached latest ;
+    asdf set -u memcached latest

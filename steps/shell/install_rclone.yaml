@@ -1,0 +1,5 @@
+- description: Install rclone via asdf.
+  command: >-
+    asdf plugin add rclone ;
+    asdf install rclone latest ;
+    asdf set -u rclone latest
