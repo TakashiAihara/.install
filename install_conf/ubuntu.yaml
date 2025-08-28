@@ -21,7 +21,9 @@
 - apt: !apt ubuntu
 
 - shell: !shell update_locale
-    zsh_default_shell
+- shell: !shell install_asdf
+
+- shell: !shell zsh_default_shell
     install_zinit
     install_sdkman
     install_act
@@ -48,7 +50,8 @@
     install_tmux
     install_zoxide
     install_xq
-    modify_ufw
     install_docker
     install_postgres
-    prepare_android
+
+- shell: !shell prepare_android
+- shell: !shell modify_ufw

@@ -120,6 +120,15 @@
   - command: sudo apt install -y language-pack-ja ; sudo locale-gen ja_JP.UTF-8 ;
       sudo update-locale LANG=ja_JP.UTF-8
     description: Update locale.
+- shell:
+  - command: ASDF_VERSION=$(curl -s https://api.github.com/repos/asdf-vm/asdf/releases/latest
+      | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/') ; ARCH=$(uname -m | sed
+      's/x86_64/amd64/; s/aarch64/arm64/') ; curl -LO "https://github.com/asdf-vm/asdf/releases/download/${ASDF_VERSION}/asdf-${ASDF_VERSION}-linux-${ARCH}.tar.gz"
+      ; tar -xzf "asdf-${ASDF_VERSION}-linux-${ARCH}.tar.gz" ; sudo mv asdf /usr/local/bin/asdf
+      ; sudo chmod +x /usr/local/bin/asdf ; rm -f "asdf-${ASDF_VERSION}-linux-${ARCH}.tar.gz"
+      ; /usr/local/bin/asdf --version
+    description: Install asdf version manager via binary.
+- shell:
   - command: sudo sed --in-place -e '/auth.*required.*pam_shells.so/s/required/sufficient/g'
       /etc/pam.d/chsh ; sudo chsh -s `which zsh | head -1` `whoami`
     description: Making zsh the default shell
@@ -170,14 +179,12 @@
     description: Install terraform via asdf.
   - command: curl -sSL https://bit.ly/install-xq | sudo bash
     description: Install xq.
-  - command: ufw default deny ; ufw allow from 192.168.0.0/24 ; ufw allow ssh ; ufw
-      allow http ; ufw allow https ; ufw logging low ; ufw --force enable ; ufw reload
-    description: modify ufw.
   - command: curl -sSL https://get.docker.com | sh
     description: Install docker.
   - command: asdf plugin add postgres ; asdf install postgres latest ; asdf set -u
       postgres latest
     description: Install postgres via asdf.
+- shell:
   - command: curl $( curl https://developer.android.com/studio | xq -x '//a[@data-category="sdk_linux_download"]/@href'
       ) -o /tmp/android_cmdlinetools.zip ; unzip /tmp/android_cmdlinetools.zip -d
       /tmp/ ; export ANDROID_HOME="/usr/local/bin/android" ; export ANDROID_SDK_ROOT="/usr/local/bin/android"
@@ -186,3 +193,7 @@
       ; mv /tmp/cmdline-tools/* ${ANDROID_SDK_ROOT}/cmdline-tools/latest ; yes | ${ANDROID_SDK_ROOT}/cmdline-tools/latest/bin/sdkmanager
       "build-tools;33.0.1" "platforms;android-33" "platform-tools"
     description: Prepare android.
+- shell:
+  - command: ufw default deny ; ufw allow from 192.168.0.0/24 ; ufw allow ssh ; ufw
+      allow http ; ufw allow https ; ufw logging low ; ufw --force enable ; ufw reload
+    description: modify ufw.
