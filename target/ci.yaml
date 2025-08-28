@@ -138,48 +138,54 @@
       ; yes | sdk install java $(sdk list java | grep ea | grep 21 | head -1 | cut
       -d "|" -f 6)
     description: Install sdkman.
-  - command: git clone https://github.com/rbenv/rbenv.git ~/.rbenv ; cd ~/.rbenv &&
-      src/configure && make -C src
-    description: Install rbenv.
-  - command: bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
-      ; source ${HOME}/.gvm/scripts/gvm ; gvm install $(gvm listall | grep "go" |
-      grep -v "rc" | tail -1) -B ; gvm use $(gvm listall | grep "go" | grep -v "rc"
-      | tail -1) --default ; gvm use $(gvm listall | grep "go" | grep -v "rc" | tail
-      -1)
-    description: Install latest go through gvm.
-  - command: go install github.com/x-motemen/ghq@latest
-    description: Install ghq.
-  - command: curl https://pyenv.run | bash ; export PYENV_ROOT="$HOME/.pyenv" ; export
-      PATH="$PYENV_ROOT/bin:$PATH" ; eval "$(pyenv init -)" ; pyenv install $( pyenv
-      install --list | grep -E -v "[a-zA-Z]" | tail -1 ) ; pyenv global $( pyenv install
-      --list | grep -E -v "[a-zA-Z]" | tail -1 ) ; pyenv rehash
-    description: Install pyenv.
-  - command: curl -sSL https://install.python-poetry.org | python3 -
-    description: Install poetry.
-  - command: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh
-      | bash ; export NVM_DIR="$HOME/.nvm" ; . "$NVM_DIR/nvm.sh" ; . "$NVM_DIR/bash_completion"
-      ; nvm install --lts ; curl -fsSL https://get.pnpm.io/install.sh | sh -
-    description: Install node.
-  - command: git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf ; cd ~/.fzf
-      ; yes | ./install
-    description: Install fzf.
+  - command: asdf plugin add act ; asdf install act latest ; asdf global act latest
+    description: Install Act via asdf.
+  - command: curl -L https://git.io/dpkg-i-from-url | bash -s -- https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+      ; sudo apt --fix-broken install -y ; asdf plugin add chromedriver ; asdf install
+      chromedriver latest ; asdf global chromedriver latest
+    description: Install awscli via asdf.
+  - command: asdf plugin add fzf ; asdf install fzf latest ; asdf global fzf latest
+    description: Install direnv via asdf.
+  - command: asdf plugin add gcloud ; asdf install gcloud latest ; asdf global gcloud
+      latest
+    description: Install gcloud via asdf.
+  - command: asdf plugin add github-cli ; asdf install github-cli latest ; asdf global
+      github-cli latest ; gh extension install maggie-j-liu/gh-star ; gh extension
+      install gabe565/gh-profile
+    description: Install gh via asdf.
+  - command: asdf plugin add ghq ; asdf install ghq latest ; asdf global ghq latest
+    description: Install ghq via asdf.
+  - command: asdf plugin add golang ; asdf install golang latest ; asdf global golang
+      latest
+    description: Install go via asdf.
+  - command: asdf plugin add nodejs ; asdf install nodejs latest ; asdf global nodejs
+      latest ; asdf plugin add pnpm ; asdf install pnpm latest ; asdf global pnpm
+      latest
+    description: Install helm via asdf.
+  - command: asdf plugin add poetry ; asdf install poetry latest ; asdf global poetry
+      latest
+    description: Install poetry via asdf.
+  - command: asdf plugin add python ; asdf install python latest ; asdf global python
+      latest
+    description: Install python via asdf.
+  - command: asdf plugin add ruby ; asdf install ruby latest ; asdf global ruby latest
+    description: Install ruby via asdf.
+  - command: asdf plugin add rust ; asdf install rust latest ; asdf global rust latest
+      ; cargo install cargo-edit cargo-watch
+    description: Install ripgrep via asdf.
+  - command: asdf plugin add starship ; asdf install starship latest ; asdf global
+      starship latest
+    description: Install starship via asdf.
+  - command: asdf plugin add zoxide ; asdf install zoxide latest ; asdf global zoxide
+      latest
+    description: Install terraform via asdf.
   - command: curl -sSL https://bit.ly/install-xq | sudo bash
     description: Install xq.
-  - command: curl -L https://git.io/dpkg-i-from-url | bash -s -- https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-      ; sudo apt --fix-broken install -y ; curl -sS https://raw.githubusercontent.com/TakashiAihara/open_functions/master/get_chromedriver.sh
-      | sh
-    description: Install chromedriver.
-  - command: curl -sS https://raw.githubusercontent.com/TakashiAihara/open_functions/master/install_gh.sh
-      | sh ; gh extension install maggie-j-liu/gh-star ; gh extension install gabe565/gh-profile
-    description: Install gh.
   - command: ufw default deny ; ufw allow from 192.168.0.0/24 ; ufw allow ssh ; ufw
       allow http ; ufw allow https ; ufw logging low ; ufw --force enable ; ufw reload
     description: modify ufw.
   - command: curl -sSL https://get.docker.com | sh
     description: Install docker.
-  - command: curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh
-      | bash
-    description: Install zoxide.
   - command: rm /etc/systemd/resolved.conf ; cp ~/.install/settings/systemd/resolved.conf
       /etc/systemd/resolved.conf ; rm /etc/resolv.conf ; ln -s /run/systemd/resolve/resolv.conf
       /etc/resolv.conf ; systemctl restart systemd-resolved
@@ -194,12 +200,3 @@
       ; mv /tmp/cmdline-tools/* ${ANDROID_SDK_ROOT}/cmdline-tools/latest ; yes | ${ANDROID_SDK_ROOT}/cmdline-tools/latest/bin/sdkmanager
       "build-tools;33.0.1" "platforms;android-33" "platform-tools"
     description: Prepare android.
-  - command: curl -s https://raw.githubusercontent.com/nektos/act/master/install.sh
-      | sudo bash -s -- -b /usr/local/bin
-    description: Install Act.
-  - command: curl https://sh.rustup.rs -sSf | sh -s -- -y --no-modify-path ; cargo
-      install cargo-edit cargo-watch ; rustup component add rustfmt clippy rls rust-src
-      rust-analysis
-    description: Install Cargo.
-  - command: curl -sS https://starship.rs/install.sh | sh -s -- -y
-    description: Install starship.
