@@ -19,7 +19,6 @@
     zsh
 
 - shell: !shell register_authorized_key
-    register_authorized_key_log
     install_zinit
     link_fonts
     install_sdkman
