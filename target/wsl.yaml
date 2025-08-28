@@ -163,9 +163,9 @@
 - shell:
   - command: ASDF_VERSION=$(curl -s https://api.github.com/repos/asdf-vm/asdf/releases/latest
       | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/') ; ARCH=$(uname -m | sed
-      's/x86_64/amd64/; s/aarch64/arm64/') ; curl -LO "https://github.com/asdf-vm/asdf/releases/download/${ASDF_VERSION}/asdf_${ASDF_VERSION}_linux_${ARCH}.tar.gz"
-      ; tar -xzf "asdf_${ASDF_VERSION}_linux_${ARCH}.tar.gz" ; sudo cp asdf/bin/asdf
-      /usr/local/bin/asdf ; rm -rf asdf "asdf_${ASDF_VERSION}_linux_${ARCH}.tar.gz"
+      's/x86_64/amd64/; s/aarch64/arm64/') ; curl -LO "https://github.com/asdf-vm/asdf/releases/download/${ASDF_VERSION}/asdf-${ASDF_VERSION}-linux-${ARCH}.tar.gz"
+      ; tar -xzf "asdf-${ASDF_VERSION}-linux-${ARCH}.tar.gz" ; sudo mv asdf /usr/local/bin/asdf
+      ; sudo chmod +x /usr/local/bin/asdf ; rm -f "asdf-${ASDF_VERSION}-linux-${ARCH}.tar.gz"
       ; /usr/local/bin/asdf --version
     description: Install asdf version manager via binary.
   - command: fc-cache -fv
