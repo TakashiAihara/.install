@@ -1,3 +1,5 @@
-- description: Install starship.
+- description: Install starship via asdf.
   command: >-
-    curl -sS https://starship.rs/install.sh | sh -s -- -y
+    asdf plugin add starship ;
+    asdf install starship latest ;
+    asdf global starship latest

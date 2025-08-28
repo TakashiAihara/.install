@@ -32,7 +32,7 @@
     install_fzf
     install_xq
     install_chromedriver
-    install_docker_with_plugin
+    install_docker
     install_gh
     install_zoxide
     install_pgenv

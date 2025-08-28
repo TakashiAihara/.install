@@ -1,0 +1,5 @@
+- description: Install terraform via asdf.
+  command: >-
+    asdf plugin add terraform ;
+    asdf install terraform latest ;
+    asdf global terraform latest

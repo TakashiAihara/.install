@@ -1,0 +1,5 @@
+- description: Install direnv via asdf.
+  command: >-
+    asdf plugin add direnv ;
+    asdf install direnv latest ;
+    asdf global direnv latest

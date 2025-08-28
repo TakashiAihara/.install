@@ -37,20 +37,30 @@
 
 - shell: !shell link_fonts
     install_sdkman
-    install_rbenv
-    install_go
-    install_ghq
-    install_pyenv
-    install_poetry
-    install_node
-    install_fzf
-    install_xq
-    install_chromedriver
-    install_gh
-    install_zoxide
-    install_pgenv
-    install_gcloud
-    prepare_android
     install_act
+    install_awscli
+    install_bat
+    install_chromedriver
+    install_direnv
+    install_fzf
+    install_gcloud
+    install_gh
+    install_ghq
+    install_go
+    install_helm
+    install_jq
+    install_kubectl
+    install_neovim
+    install_node
+    install_poetry
+    install_pyenv
+    install_rbenv
+    install_ripgrep
     install_rust
     install_starship
+    install_terraform
+    install_tmux
+    install_zoxide
+    install_xq
+    install_pgenv
+    prepare_android

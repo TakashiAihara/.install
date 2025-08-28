@@ -1,0 +1,5 @@
+- description: Install docker-compose via asdf.
+  command: >-
+    asdf plugin add docker-compose ;
+    asdf install docker-compose latest ;
+    asdf global docker-compose latest
