@@ -4,4 +4,4 @@
     sudo apt --fix-broken install -y ;
     asdf plugin add chromedriver ;
     asdf install chromedriver latest ;
-    asdf global chromedriver latest
+    asdf set -u chromedriver latest

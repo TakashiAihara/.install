@@ -2,4 +2,4 @@
   command: >-
     asdf plugin add starship ;
     asdf install starship latest ;
-    asdf global starship latest
+    asdf set -u starship latest

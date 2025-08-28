@@ -2,4 +2,4 @@
   command: >-
     asdf plugin add jq ;
     asdf install jq latest ;
-    asdf global jq latest
+    asdf set -u jq latest

@@ -2,4 +2,4 @@
   command: >-
     asdf plugin add kubectl ;
     asdf install kubectl latest ;
-    asdf global kubectl latest
+    asdf set -u kubectl latest

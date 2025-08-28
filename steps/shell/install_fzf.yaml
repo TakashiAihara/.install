@@ -2,4 +2,4 @@
   command: >-
     asdf plugin add fzf ;
     asdf install fzf latest ;
-    asdf global fzf latest
+    asdf set -u fzf latest

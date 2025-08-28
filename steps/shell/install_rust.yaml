@@ -2,5 +2,5 @@
   command: >-
     asdf plugin add rust ;
     asdf install rust latest ;
-    asdf global rust latest ;
+    asdf set -u rust latest ;
     cargo install cargo-edit cargo-watch

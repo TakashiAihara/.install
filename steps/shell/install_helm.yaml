@@ -2,4 +2,4 @@
   command: >-
     asdf plugin add helm ;
     asdf install helm latest ;
-    asdf global helm latest
+    asdf set -u helm latest

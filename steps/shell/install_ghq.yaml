@@ -2,4 +2,4 @@
   command: >-
     asdf plugin add ghq ;
     asdf install ghq latest ;
-    asdf global ghq latest
+    asdf set -u ghq latest

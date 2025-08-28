@@ -2,4 +2,4 @@
   command: >-
     asdf plugin add docker-compose ;
     asdf install docker-compose latest ;
-    asdf global docker-compose latest
+    asdf set -u docker-compose latest

@@ -2,4 +2,4 @@
   command: >-
     asdf plugin add zoxide ;
     asdf install zoxide latest ;
-    asdf global zoxide latest
+    asdf set -u zoxide latest

@@ -2,4 +2,4 @@
   command: >-
     asdf plugin add gcloud ;
     asdf install gcloud latest ;
-    asdf global gcloud latest
+    asdf set -u gcloud latest
