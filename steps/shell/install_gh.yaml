@@ -2,6 +2,6 @@
   command: >-
     asdf plugin add github-cli ;
     asdf install github-cli latest ;
-    asdf global github-cli latest ;
+    asdf set -u github-cli latest ;
     gh extension install maggie-j-liu/gh-star ;
     gh extension install gabe565/gh-profile

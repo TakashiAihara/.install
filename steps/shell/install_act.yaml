@@ -2,4 +2,4 @@
   command: >-
     asdf plugin add act ;
     asdf install act latest ;
-    asdf global act latest
+    asdf set -u act latest

@@ -2,4 +2,4 @@
   command: >-
     asdf plugin add tmux ;
     asdf install tmux latest ;
-    asdf global tmux latest
+    asdf set -u tmux latest

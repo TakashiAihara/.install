@@ -2,4 +2,4 @@
   command: >-
     asdf plugin add bat ;
     asdf install bat latest ;
-    asdf global bat latest
+    asdf set -u bat latest

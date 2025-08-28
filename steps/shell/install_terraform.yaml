@@ -2,4 +2,4 @@
   command: >-
     asdf plugin add terraform ;
     asdf install terraform latest ;
-    asdf global terraform latest
+    asdf set -u terraform latest

@@ -2,4 +2,4 @@
   command: >-
     asdf plugin add neovim ;
     asdf install neovim latest ;
-    asdf global neovim latest
+    asdf set -u neovim latest
