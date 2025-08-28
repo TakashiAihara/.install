@@ -39,6 +39,5 @@
     modify_ufw
     install_docker
     install_zoxide
-    apply_dns_settings
     install_postgres
     install_starship

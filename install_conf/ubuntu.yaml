@@ -52,6 +52,5 @@
     install_xq
     modify_ufw
     install_docker
-    apply_dns_settings
     install_postgres
     prepare_android
