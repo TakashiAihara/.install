@@ -96,10 +96,6 @@
   - command: sudo apt update ; sudo apt upgrade -y ; sudo apt autoremove -y; sudo
       apt clean
     description: apt update and upgrade.
-  - command: 'mkdir -p ~/.ssh ; . ./.env && curl -Ss "http://key.aiharahome.site/pubkey?name=${DOTBOT_AREA}"
-      | grep "pubkey" | sed -r ''s/^[^:]*: (.*)$/\1/'' | sed -r ''s/"//g'' | tee -a
-      ~/.ssh/authorized_keys'
-    description: Register authorized_key.
 - apt:
   - apt-transport-https
   - asciidoctor
