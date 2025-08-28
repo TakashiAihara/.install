@@ -162,10 +162,8 @@
     description: Install zinit.
 - shell:
   - command: fc-cache -fv
-    description: link fonts.
-  - command: curl -s "https://get.sdkman.io" | bash ; source "$HOME/.sdkman/bin/sdkman-init.sh"
-      ; yes | sdk install java $(sdk list java | grep ea | grep 21 | head -1 | cut
-      -d "|" -f 6)
+    description: Install asdf version manager via binary.
+  - command: curl -s "https://get.sdkman.io" | bash
     description: Install sdkman.
   - command: asdf plugin add act ; asdf install act latest ; asdf global act latest
     description: Install Act via asdf.

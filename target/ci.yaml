@@ -125,10 +125,9 @@
       rm -rf "$(dirname $ZINIT_HOME)" ; mkdir -p "$(dirname $ZINIT_HOME)" ; git clone
       https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
     description: Install zinit.
-  - command: curl -s "https://get.sdkman.io" | bash ; source "$HOME/.sdkman/bin/sdkman-init.sh"
-      ; yes | sdk install java $(sdk list java | grep ea | grep 21 | head -1 | cut
-      -d "|" -f 6)
-    description: Install sdkman.
+- shell:
+  - command: curl -s "https://get.sdkman.io" | bash
+    description: Install asdf version manager via binary.
   - command: asdf plugin add act ; asdf install act latest ; asdf global act latest
     description: Install Act via asdf.
   - command: curl -L https://git.io/dpkg-i-from-url | bash -s -- https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
