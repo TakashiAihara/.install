@@ -21,7 +21,10 @@
 - libssl-dev
 - libtool
 - libtool-bin
+- uuid-dev
+- libxml2-dev
 - libxml2-utils
+- libxmlsec1-dev
 - llvm
 - make
 - ninja-build
