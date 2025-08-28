@@ -41,7 +41,6 @@
     install_node
     install_poetry
     install_pyenv
-    install_ruby
     install_ripgrep
     install_rust
     install_starship
