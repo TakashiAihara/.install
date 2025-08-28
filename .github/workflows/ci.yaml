@@ -44,6 +44,12 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+
+      - name: Pull latest changes (including generate commit)
+        run: |
+          git pull origin ${{ github.ref_name }}
 
       - name: Install
         run: ARCH=ci ./install
