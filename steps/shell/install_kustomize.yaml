@@ -1,0 +1,5 @@
+- description: Install kustomize via asdf.
+  command: >-
+    asdf plugin add kustomize ;
+    asdf install kustomize latest ;
+    asdf set -u kustomize latest

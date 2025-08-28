@@ -1,5 +1,6 @@
-- description: Install Cargo.
+- description: Install rust via asdf.
   command: >-
-    curl https://sh.rustup.rs -sSf | sh -s -- -y --no-modify-path ;
-    cargo install cargo-edit cargo-watch ;
-    rustup component add rustfmt clippy rls rust-src rust-analysis
+    asdf plugin add rust ;
+    asdf install rust latest ;
+    asdf set -u rust latest ;
+    cargo install cargo-edit cargo-watch

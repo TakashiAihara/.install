@@ -13,34 +13,42 @@
     tmux
     zsh
 
-- shell: !shell avoid_restart_service_confirm
-    replace_git_latest
+- shell: !shell replace_git_latest
     apt_update_upgrade
-    register_authorized_key
-    register_authorized_key_log
 
 - apt: !apt ubuntu
 
 - shell: !shell update_locale
     zsh_default_shell
     install_zinit
+
+- shell: !shell install_asdf
     install_sdkman
-    install_rbenv
-    install_go
-    install_ghq
-    install_pyenv
-    install_poetry
-    install_node
-    install_fzf
-    install_xq
-    install_chromedriver
-    install_gh
-    modify_ufw
-    install_docker
-    install_zoxide
-    apply_dns_settings
-    install_pgenv
-    prepare_android
     install_act
+    install_awscli
+    install_bat
+    install_chromedriver
+    install_direnv
+    install_fzf
+    install_gcloud
+    install_gh
+    install_ghq
+    install_go
+    install_helm
+    install_jq
+    install_kubectl
+    install_neovim
+    install_node
+    install_poetry
+    install_pyenv
+    install_ripgrep
     install_rust
     install_starship
+    install_terraform
+    install_tmux
+    install_zoxide
+    install_xq
+    modify_ufw
+    install_docker
+    install_postgres
+    prepare_android

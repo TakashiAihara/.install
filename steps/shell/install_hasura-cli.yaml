@@ -1,0 +1,5 @@
+- description: Install hasura-cli via asdf.
+  command: >-
+    asdf plugin add hasura-cli ;
+    asdf install hasura-cli latest ;
+    asdf set -u hasura-cli latest

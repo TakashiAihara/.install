@@ -1,0 +1,5 @@
+- description: Install vim via asdf.
+  command: >-
+    asdf plugin add vim ;
+    asdf install vim latest ;
+    asdf set -u vim latest

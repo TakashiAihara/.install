@@ -1,0 +1,5 @@
+- description: Install yj via asdf.
+  command: >-
+    asdf plugin add yj ;
+    asdf install yj latest ;
+    asdf set -u yj latest

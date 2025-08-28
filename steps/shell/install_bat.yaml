@@ -1,0 +1,5 @@
+- description: Install bat via asdf.
+  command: >-
+    asdf plugin add bat ;
+    asdf install bat latest ;
+    asdf set -u bat latest

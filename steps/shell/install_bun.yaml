@@ -1,0 +1,5 @@
+- description: Install bun via asdf.
+  command: >-
+    asdf plugin add bun ;
+    asdf install bun latest ;
+    asdf set -u bun latest

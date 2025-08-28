@@ -1,0 +1,5 @@
+- description: Install helm via asdf.
+  command: >-
+    asdf plugin add helm ;
+    asdf install helm latest ;
+    asdf set -u helm latest

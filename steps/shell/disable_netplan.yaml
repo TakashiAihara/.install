@@ -1,0 +1,5 @@
+- description: Disable netplan and systemd-resolved for Proxmox CT.
+  command: >-
+    systemctl disable --now systemd-resolved || true ;
+    rm -f /etc/resolv.conf ;
+    printf "search local\nnameserver 192.168.0.10\nnameserver 1.1.1.1\n" > /etc/resolv.conf

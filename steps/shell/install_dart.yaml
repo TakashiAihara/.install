@@ -1,0 +1,5 @@
+- description: Install dart via asdf.
+  command: >-
+    asdf plugin add dart ;
+    asdf install dart latest ;
+    asdf set -u dart latest

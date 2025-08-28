@@ -1,5 +1,7 @@
-- description: Install gh.
+- description: Install gh via asdf.
   command: >-
-    curl -sS https://raw.githubusercontent.com/TakashiAihara/open_functions/master/install_gh.sh | sh ;
+    asdf plugin add github-cli ;
+    asdf install github-cli latest ;
+    asdf set -u github-cli latest ;
     gh extension install maggie-j-liu/gh-star ;
     gh extension install gabe565/gh-profile

@@ -1,3 +1,5 @@
-- description: Install zoxide.
+- description: Install zoxide via asdf.
   command: >-
-    curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
+    asdf plugin add zoxide ;
+    asdf install zoxide latest ;
+    asdf set -u zoxide latest

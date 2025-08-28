@@ -1,0 +1,5 @@
+- description: Install scala via asdf.
+  command: >-
+    asdf plugin add scala ;
+    asdf install scala latest ;
+    asdf set -u scala latest

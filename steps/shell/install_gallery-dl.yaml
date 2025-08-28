@@ -1,0 +1,5 @@
+- description: Install gallery-dl via asdf.
+  command: >-
+    asdf plugin add gallery-dl ;
+    asdf install gallery-dl latest ;
+    asdf set -u gallery-dl latest

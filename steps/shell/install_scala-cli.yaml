@@ -1,0 +1,5 @@
+- description: Install scala-cli via asdf.
+  command: >-
+    asdf plugin add scala-cli ;
+    asdf install scala-cli latest ;
+    asdf set -u scala-cli latest

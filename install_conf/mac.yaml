@@ -18,12 +18,10 @@
     tmux
     zsh
 
-- shell: !shell register_authorized_key
-    register_authorized_key_log
-    install_zinit
+- shell: !shell install_zinit
     link_fonts
     install_sdkman
-    install_rbenv
+    install_ruby
     install_go
     install_ghq
     install_pyenv
@@ -32,10 +30,10 @@
     install_fzf
     install_xq
     install_chromedriver
-    install_docker_with_plugin
+    install_docker
     install_gh
     install_zoxide
-    install_pgenv
+    install_postgres
     install_gcloud
     install_rust
     prepare_android

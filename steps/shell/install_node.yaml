@@ -1,8 +1,8 @@
-- description: Install node.
+- description: Install node via asdf.
   command: >-
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash ;
-    export NVM_DIR="$HOME/.nvm" ;
-    . "$NVM_DIR/nvm.sh" ;
-    . "$NVM_DIR/bash_completion" ;
-    nvm install --lts ;
-    curl -fsSL https://get.pnpm.io/install.sh | sh -
+    asdf plugin add nodejs ;
+    asdf install nodejs latest ;
+    asdf set -u nodejs latest ;
+    asdf plugin add pnpm ;
+    asdf install pnpm latest ;
+    asdf set -u pnpm latest

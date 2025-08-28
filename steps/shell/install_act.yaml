@@ -1,3 +1,5 @@
-- description: Install Act.
+- description: Install Act via asdf.
   command: >-
-    curl -s https://raw.githubusercontent.com/nektos/act/master/install.sh | sudo bash -s -- -b /usr/local/bin
+    asdf plugin add act ;
+    asdf install act latest ;
+    asdf set -u act latest
