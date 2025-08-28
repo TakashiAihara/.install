@@ -26,7 +26,6 @@
 
 - shell: !shell replace_git_latest
     apt_update_upgrade
-    register_authorized_key
 
 - apt: !apt wsl
 
