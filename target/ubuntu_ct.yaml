@@ -120,8 +120,8 @@
   - graphviz
   - rename
 - shell:
-  - command: dpkg-reconfigure locales apt install -y language-pack-ja ; update-locale
-      LANG=ja_JP.UTF-8
+  - command: sudo apt install -y language-pack-ja ; sudo locale-gen ja_JP.UTF-8 ;
+      sudo update-locale LANG=ja_JP.UTF-8
     description: Update locale.
   - command: sudo sed --in-place -e '/auth.*required.*pam_shells.so/s/required/sufficient/g'
       /etc/pam.d/chsh ; sudo chsh -s `which zsh | head -1` `whoami`
