@@ -18,8 +18,7 @@
     tmux
     zsh
 
-- shell: !shell register_authorized_key
-    install_zinit
+- shell: !shell install_zinit
     link_fonts
     install_sdkman
     install_ruby

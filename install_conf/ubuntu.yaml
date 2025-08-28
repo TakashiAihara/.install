@@ -17,7 +17,6 @@
 - shell: !shell avoid_restart_service_confirm
     replace_git_latest
     apt_update_upgrade
-    register_authorized_key
 
 - apt: !apt ubuntu
 
