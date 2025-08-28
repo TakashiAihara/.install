@@ -132,11 +132,9 @@
     description: Install zinit.
   - command: curl -s "https://get.sdkman.io" | bash
     description: Install sdkman.
-  - command: asdf plugin add ruby ; asdf install ruby latest ; asdf set -u ruby latest
-    description: Install ruby via asdf.
   - command: asdf plugin add golang ; asdf install golang latest ; asdf set -u golang
       latest
-    description: Install go via asdf.
+    description: Install ruby via asdf.
   - command: asdf plugin add ghq ; asdf install ghq latest ; asdf set -u ghq latest
     description: Install ghq via asdf.
   - command: asdf plugin add python ; asdf install python latest ; asdf set -u python
@@ -169,8 +167,9 @@
   - command: asdf plugin add zoxide ; asdf install zoxide latest ; asdf set -u zoxide
       latest
     description: Install zoxide via asdf.
-  - command: git clone https://github.com/theory/pgenv.git ~/.pgenv
-    description: Install pgenv.
+  - command: asdf plugin add postgres ; asdf install postgres latest ; asdf set -u
+      postgres latest
+    description: Install postgres via asdf.
   - command: curl $( curl https://developer.android.com/studio | xq -x '//a[@data-category="sdk_linux_download"]/@href'
       ) -o /tmp/android_cmdlinetools.zip ; unzip /tmp/android_cmdlinetools.zip -d
       /tmp/ ; export ANDROID_HOME="/usr/local/android" ; export ANDROID_SDK_ROOT="/usr/local/android"

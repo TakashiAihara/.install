@@ -24,7 +24,7 @@
     zsh_default_shell
     install_zinit
     install_sdkman
-    install_rbenv
+    install_ruby
     install_go
     install_ghq
     install_pyenv
@@ -37,7 +37,7 @@
     modify_ufw
     install_docker
     install_zoxide
-    install_pgenv
+    install_postgres
     prepare_android
     install_act
     install_rust

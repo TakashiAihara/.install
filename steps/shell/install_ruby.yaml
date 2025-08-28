@@ -1,0 +1,5 @@
+- description: Install ruby via asdf.
+  command: >-
+    asdf plugin add ruby ;
+    asdf install ruby latest ;
+    asdf set -u ruby latest

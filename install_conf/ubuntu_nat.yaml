@@ -26,7 +26,7 @@
     zsh_default_shell
     install_zinit
     install_sdkman
-    install_rbenv
+    install_ruby
     install_go
     install_ghq
     install_pyenv
@@ -40,5 +40,5 @@
     install_docker
     install_zoxide
     apply_dns_settings
-    install_pgenv
+    install_postgres
     install_starship

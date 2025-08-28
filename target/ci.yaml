@@ -165,11 +165,9 @@
   - command: asdf plugin add python ; asdf install python latest ; asdf set -u python
       latest
     description: Install python via asdf.
-  - command: asdf plugin add ruby ; asdf install ruby latest ; asdf set -u ruby latest
-    description: Install ruby via asdf.
   - command: asdf plugin add rust ; asdf install rust latest ; asdf set -u rust latest
       ; cargo install cargo-edit cargo-watch
-    description: Install ripgrep via asdf.
+    description: Install ruby via asdf.
   - command: asdf plugin add starship ; asdf install starship latest ; asdf set -u
       starship latest
     description: Install starship via asdf.
@@ -187,8 +185,9 @@
       /etc/systemd/resolved.conf ; rm /etc/resolv.conf ; ln -s /run/systemd/resolve/resolv.conf
       /etc/resolv.conf ; systemctl restart systemd-resolved
     description: Apply dns settings
-  - command: git clone https://github.com/theory/pgenv.git ~/.pgenv
-    description: Install pgenv.
+  - command: asdf plugin add postgres ; asdf install postgres latest ; asdf set -u
+      postgres latest
+    description: Install postgres via asdf.
   - command: curl $( curl https://developer.android.com/studio | xq -x '//a[@data-category="sdk_linux_download"]/@href'
       ) -o /tmp/android_cmdlinetools.zip ; unzip /tmp/android_cmdlinetools.zip -d
       /tmp/ ; export ANDROID_HOME="/usr/local/android" ; export ANDROID_SDK_ROOT="/usr/local/android"
