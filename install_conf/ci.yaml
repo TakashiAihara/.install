@@ -21,6 +21,8 @@
 - shell: !shell update_locale
     zsh_default_shell
     install_zinit
+
+- shell: !shell install_asdf
     install_sdkman
     install_act
     install_awscli
