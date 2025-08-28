@@ -1,0 +1,5 @@
+- description: Install redis via asdf.
+  command: >-
+    asdf plugin add redis ;
+    asdf install redis latest ;
+    asdf set -u redis latest

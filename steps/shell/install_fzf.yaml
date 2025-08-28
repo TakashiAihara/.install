@@ -1,5 +1,5 @@
-- description: Install fzf.
+- description: Install fzf via asdf.
   command: >-
-    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf ;
-    cd ~/.fzf ;
-    yes | ./install
+    asdf plugin add fzf ;
+    asdf install fzf latest ;
+    asdf set -u fzf latest

@@ -1,0 +1,5 @@
+- description: Install swift via asdf.
+  command: >-
+    asdf plugin add swift ;
+    asdf install swift latest ;
+    asdf set -u swift latest

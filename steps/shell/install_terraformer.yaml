@@ -1,0 +1,5 @@
+- description: Install terraformer via asdf.
+  command: >-
+    asdf plugin add terraformer ;
+    asdf install terraformer latest ;
+    asdf set -u terraformer latest

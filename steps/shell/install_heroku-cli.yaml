@@ -1,0 +1,5 @@
+- description: Install heroku-cli via asdf.
+  command: >-
+    asdf plugin add heroku-cli ;
+    asdf install heroku-cli latest ;
+    asdf set -u heroku-cli latest

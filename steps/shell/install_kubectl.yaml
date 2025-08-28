@@ -1,0 +1,5 @@
+- description: Install kubectl via asdf.
+  command: >-
+    asdf plugin add kubectl ;
+    asdf install kubectl latest ;
+    asdf set -u kubectl latest

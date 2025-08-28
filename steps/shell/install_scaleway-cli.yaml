@@ -1,0 +1,5 @@
+- description: Install scaleway-cli via asdf.
+  command: >-
+    asdf plugin add scaleway-cli ;
+    asdf install scaleway-cli latest ;
+    asdf set -u scaleway-cli latest

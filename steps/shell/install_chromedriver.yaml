@@ -1,5 +1,7 @@
-- description: Install chromedriver.
+- description: Install chromedriver via asdf and Chrome browser.
   command: >-
     curl -L https://git.io/dpkg-i-from-url | bash -s -- https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb ;
     sudo apt --fix-broken install -y ;
-    curl -sS https://raw.githubusercontent.com/TakashiAihara/open_functions/master/get_chromedriver.sh | sh
+    asdf plugin add chromedriver ;
+    asdf install chromedriver latest ;
+    asdf set -u chromedriver latest

@@ -1,0 +1,5 @@
+- description: Install uv via asdf.
+  command: >-
+    asdf plugin add uv ;
+    asdf install uv latest ;
+    asdf set -u uv latest

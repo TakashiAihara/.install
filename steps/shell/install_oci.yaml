@@ -1,0 +1,5 @@
+- description: Install oci via asdf.
+  command: >-
+    asdf plugin add oci ;
+    asdf install oci latest ;
+    asdf set -u oci latest

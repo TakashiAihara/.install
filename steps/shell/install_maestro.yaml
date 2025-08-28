@@ -1,0 +1,5 @@
+- description: Install maestro via asdf.
+  command: >-
+    asdf plugin add maestro ;
+    asdf install maestro latest ;
+    asdf set -u maestro latest

@@ -1,3 +1,0 @@
-- description: Install pgenv.
-  command: >-
-    git clone https://github.com/theory/pgenv.git ~/.pgenv

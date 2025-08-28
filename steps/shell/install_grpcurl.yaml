@@ -1,0 +1,5 @@
+- description: Install grpcurl via asdf.
+  command: >-
+    asdf plugin add grpcurl ;
+    asdf install grpcurl latest ;
+    asdf set -u grpcurl latest

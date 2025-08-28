@@ -1,0 +1,5 @@
+- description: Install supabase-cli via asdf.
+  command: >-
+    asdf plugin add supabase-cli ;
+    asdf install supabase-cli latest ;
+    asdf set -u supabase-cli latest

@@ -1,0 +1,5 @@
+- description: Install rabbitmq via asdf.
+  command: >-
+    asdf plugin add rabbitmq ;
+    asdf install rabbitmq latest ;
+    asdf set -u rabbitmq latest

@@ -1,0 +1,5 @@
+- description: Install mongodb via asdf.
+  command: >-
+    asdf plugin add mongodb ;
+    asdf install mongodb latest ;
+    asdf set -u mongodb latest

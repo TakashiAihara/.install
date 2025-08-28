@@ -1,0 +1,5 @@
+- description: Install vultr-cli via asdf.
+  command: >-
+    asdf plugin add vultr-cli ;
+    asdf install vultr-cli latest ;
+    asdf set -u vultr-cli latest
