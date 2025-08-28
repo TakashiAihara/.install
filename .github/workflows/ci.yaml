@@ -37,9 +37,19 @@ jobs:
         with:
           commit_message: Generate target conf
 
+---
+name: CI Test
+
+on:
+  workflow_run:
+    workflows: ["CI"]
+    types:
+      - completed
+
+jobs:
   ci:
-    needs: generate
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
     steps:
       - name: Checkout repo
