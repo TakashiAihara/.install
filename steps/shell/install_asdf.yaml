@@ -1,0 +1,14 @@
+- description: Install asdf version manager via binary.
+  command: >-
+    ASDF_VERSION=$(curl -s https://api.github.com/repos/asdf-vm/asdf/releases/latest | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/') ;
+    ARCH=$(uname -m) ;
+    case $ARCH in
+      x86_64) ASDF_ARCH="amd64" ;;
+      aarch64|arm64) ASDF_ARCH="arm64" ;;
+      *) echo "Unsupported architecture: $ARCH" && exit 1 ;;
+    esac ;
+    curl -LO "https://github.com/asdf-vm/asdf/releases/download/${ASDF_VERSION}/asdf_${ASDF_VERSION}_linux_${ASDF_ARCH}.tar.gz" ;
+    tar -xzf "asdf_${ASDF_VERSION}_linux_${ASDF_ARCH}.tar.gz" ;
+    sudo cp asdf/bin/asdf /usr/local/bin/asdf ;
+    rm -rf asdf "asdf_${ASDF_VERSION}_linux_${ASDF_ARCH}.tar.gz" ;
+    /usr/local/bin/asdf --version

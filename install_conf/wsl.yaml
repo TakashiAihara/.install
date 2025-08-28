@@ -34,7 +34,8 @@
     zsh_default_shell
     install_zinit
 
-- shell: !shell link_fonts
+- shell: !shell install_asdf
+    link_fonts
     install_sdkman
     install_act
     install_awscli
