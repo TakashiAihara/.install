@@ -126,8 +126,15 @@
       https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
     description: Install zinit.
 - shell:
-  - command: curl -s "https://get.sdkman.io" | bash
+  - command: ASDF_VERSION=$(curl -s https://api.github.com/repos/asdf-vm/asdf/releases/latest
+      | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/') ; ARCH=$(uname -m | sed
+      's/x86_64/amd64/; s/aarch64/arm64/') ; curl -LO "https://github.com/asdf-vm/asdf/releases/download/${ASDF_VERSION}/asdf_${ASDF_VERSION}_linux_${ARCH}.tar.gz"
+      ; tar -xzf "asdf_${ASDF_VERSION}_linux_${ARCH}.tar.gz" ; sudo cp asdf/bin/asdf
+      /usr/local/bin/asdf ; rm -rf asdf "asdf_${ASDF_VERSION}_linux_${ARCH}.tar.gz"
+      ; /usr/local/bin/asdf --version
     description: Install asdf version manager via binary.
+  - command: curl -s "https://get.sdkman.io" | bash
+    description: Install sdkman.
   - command: asdf plugin add act ; asdf install act latest ; asdf global act latest
     description: Install Act via asdf.
   - command: curl -L https://git.io/dpkg-i-from-url | bash -s -- https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
