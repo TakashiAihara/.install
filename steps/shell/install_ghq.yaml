@@ -1,3 +1,5 @@
-- description: Install ghq.
+- description: Install ghq via asdf.
   command: >-
-    go install github.com/x-motemen/ghq@latest
+    asdf plugin add ghq ;
+    asdf install ghq latest ;
+    asdf global ghq latest

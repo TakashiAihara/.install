@@ -1,3 +1,5 @@
-- description: Install poetry.
+- description: Install poetry via asdf.
   command: >-
-    curl -sSL https://install.python-poetry.org | python3 -
+    asdf plugin add poetry ;
+    asdf install poetry latest ;
+    asdf global poetry latest

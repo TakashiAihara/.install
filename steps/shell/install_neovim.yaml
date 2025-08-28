@@ -1,0 +1,5 @@
+- description: Install neovim via asdf.
+  command: >-
+    asdf plugin add neovim ;
+    asdf install neovim latest ;
+    asdf global neovim latest

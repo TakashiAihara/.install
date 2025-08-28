@@ -1,0 +1,5 @@
+- description: Install tmux via asdf.
+  command: >-
+    asdf plugin add tmux ;
+    asdf install tmux latest ;
+    asdf global tmux latest
