@@ -139,7 +139,7 @@
     description: Install rust via asdf.
   - command: curl $( curl https://developer.android.com/studio | xq -x '//a[@data-category="sdk_linux_download"]/@href'
       ) -o /tmp/android_cmdlinetools.zip ; unzip /tmp/android_cmdlinetools.zip -d
-      /tmp/ ; export ANDROID_HOME="/usr/local/android" ; export ANDROID_SDK_ROOT="/usr/local/android"
+      /tmp/ ; export ANDROID_HOME="/usr/local/bin/android" ; export ANDROID_SDK_ROOT="/usr/local/bin/android"
       ; export PATH="$PATH:$ANDROID_HOME/cmdline-tools/latest/bin" ; export PATH="$PATH:$ANDROID_HOME/platform-tools"
       ; rm -rf ${ANDROID_SDK_ROOT}/cmdline-tools/latest ; mkdir -p ${ANDROID_SDK_ROOT}/cmdline-tools/latest
       ; mv /tmp/cmdline-tools/* ${ANDROID_SDK_ROOT}/cmdline-tools/latest ; yes | ${ANDROID_SDK_ROOT}/cmdline-tools/latest/bin/sdkmanager
