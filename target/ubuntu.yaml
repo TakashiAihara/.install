@@ -121,9 +121,8 @@
       sudo update-locale LANG=ja_JP.UTF-8
     description: Update locale.
 - shell:
-  - command: ASDF_VERSION=$(curl -s https://api.github.com/repos/asdf-vm/asdf/releases/latest
-      | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/') ; ARCH=$(uname -m | sed
-      's/x86_64/amd64/; s/aarch64/arm64/') ; curl -LO "https://github.com/asdf-vm/asdf/releases/download/${ASDF_VERSION}/asdf-${ASDF_VERSION}-linux-${ARCH}.tar.gz"
+  - command: ASDF_VERSION="v0.18.0" ; ARCH=$(uname -m | sed 's/x86_64/amd64/; s/aarch64/arm64/')
+      ; curl -LO "https://github.com/asdf-vm/asdf/releases/download/${ASDF_VERSION}/asdf-${ASDF_VERSION}-linux-${ARCH}.tar.gz"
       ; tar -xzf "asdf-${ASDF_VERSION}-linux-${ARCH}.tar.gz" ; sudo mv asdf /usr/local/bin/asdf
       ; sudo chmod +x /usr/local/bin/asdf ; rm -f "asdf-${ASDF_VERSION}-linux-${ARCH}.tar.gz"
       ; /usr/local/bin/asdf --version
