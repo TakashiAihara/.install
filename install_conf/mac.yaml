@@ -22,7 +22,7 @@
     install_zinit
     link_fonts
     install_sdkman
-    install_rbenv
+    install_ruby
     install_go
     install_ghq
     install_pyenv
@@ -34,7 +34,7 @@
     install_docker
     install_gh
     install_zoxide
-    install_pgenv
+    install_postgres
     install_gcloud
     install_rust
     prepare_android

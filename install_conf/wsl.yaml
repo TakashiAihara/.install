@@ -54,7 +54,7 @@
     install_node
     install_poetry
     install_pyenv
-    install_rbenv
+    install_ruby
     install_ripgrep
     install_rust
     install_starship
@@ -62,5 +62,5 @@
     install_tmux
     install_zoxide
     install_xq
-    install_pgenv
+    install_postgres
     prepare_android

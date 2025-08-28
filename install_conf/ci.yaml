@@ -41,7 +41,7 @@
     install_node
     install_poetry
     install_pyenv
-    install_rbenv
+    install_ruby
     install_ripgrep
     install_rust
     install_starship
@@ -52,5 +52,5 @@
     modify_ufw
     install_docker
     apply_dns_settings
-    install_pgenv
+    install_postgres
     prepare_android
