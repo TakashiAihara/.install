@@ -164,7 +164,7 @@
     description: Install python via asdf.
   - command: asdf plugin add rust ; asdf install rust latest ; asdf set -u rust latest
       ; cargo install cargo-edit cargo-watch
-    description: Install ruby via asdf.
+    description: Install ripgrep via asdf.
   - command: asdf plugin add starship ; asdf install starship latest ; asdf set -u
       starship latest
     description: Install starship via asdf.
@@ -178,10 +178,6 @@
     description: modify ufw.
   - command: curl -sSL https://get.docker.com | sh
     description: Install docker.
-  - command: rm /etc/systemd/resolved.conf ; cp ~/.install/settings/systemd/resolved.conf
-      /etc/systemd/resolved.conf ; rm /etc/resolv.conf ; ln -s /run/systemd/resolve/resolv.conf
-      /etc/resolv.conf ; systemctl restart systemd-resolved
-    description: Apply dns settings
   - command: asdf plugin add postgres ; asdf install postgres latest ; asdf set -u
       postgres latest
     description: Install postgres via asdf.

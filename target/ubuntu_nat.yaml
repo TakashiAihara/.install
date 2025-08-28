@@ -84,10 +84,6 @@
   - command: sudo apt update ; sudo apt upgrade -y ; sudo apt autoremove -y; sudo
       apt clean
     description: apt update and upgrade.
-  - command: 'mkdir -p ~/.ssh ; . ./.env && curl -Ss "http://key.aiharahome.site/pubkey?name=${DOTBOT_AREA}"
-      | grep "pubkey" | sed -r ''s/^[^:]*: (.*)$/\1/'' | sed -r ''s/"//g'' | tee -a
-      ~/.ssh/authorized_keys'
-    description: Register authorized_key.
 - apt:
   - autoconf
   - automake
@@ -180,10 +176,6 @@
   - command: asdf plugin add zoxide ; asdf install zoxide latest ; asdf set -u zoxide
       latest
     description: Install zoxide via asdf.
-  - command: rm /etc/systemd/resolved.conf ; cp ~/.install/settings/systemd/resolved.conf
-      /etc/systemd/resolved.conf ; rm /etc/resolv.conf ; ln -s /run/systemd/resolve/resolv.conf
-      /etc/resolv.conf ; systemctl restart systemd-resolved
-    description: Apply dns settings
   - command: asdf plugin add postgres ; asdf install postgres latest ; asdf set -u
       postgres latest
     description: Install postgres via asdf.

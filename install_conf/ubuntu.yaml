@@ -47,7 +47,6 @@
     install_terraform
     install_tmux
     install_zoxide
-
     install_xq
     modify_ufw
     install_docker
