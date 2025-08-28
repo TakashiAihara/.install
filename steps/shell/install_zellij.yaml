@@ -1,0 +1,5 @@
+- description: Install zellij via asdf.
+  command: >-
+    asdf plugin add zellij ;
+    asdf install zellij latest ;
+    asdf set -u zellij latest

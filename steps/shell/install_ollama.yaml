@@ -1,0 +1,5 @@
+- description: Install ollama via asdf.
+  command: >-
+    asdf plugin add ollama ;
+    asdf install ollama latest ;
+    asdf set -u ollama latest

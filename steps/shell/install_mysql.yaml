@@ -1,0 +1,5 @@
+- description: Install mysql via asdf.
+  command: >-
+    asdf plugin add mysql ;
+    asdf install mysql latest ;
+    asdf set -u mysql latest

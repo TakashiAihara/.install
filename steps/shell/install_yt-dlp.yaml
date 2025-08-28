@@ -1,0 +1,5 @@
+- description: Install yt-dlp via asdf.
+  command: >-
+    asdf plugin add yt-dlp ;
+    asdf install yt-dlp latest ;
+    asdf set -u yt-dlp latest

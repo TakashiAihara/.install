@@ -1,0 +1,5 @@
+- description: Install sqlite via asdf.
+  command: >-
+    asdf plugin add sqlite ;
+    asdf install sqlite latest ;
+    asdf set -u sqlite latest

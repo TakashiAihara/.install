@@ -1,0 +1,5 @@
+- description: Install ffmpeg via asdf.
+  command: >-
+    asdf plugin add ffmpeg ;
+    asdf install ffmpeg latest ;
+    asdf set -u ffmpeg latest

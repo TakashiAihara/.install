@@ -1,0 +1,5 @@
+- description: Install zig via asdf.
+  command: >-
+    asdf plugin add zig ;
+    asdf install zig latest ;
+    asdf set -u zig latest

@@ -1,0 +1,5 @@
+- description: Install redis-cli via asdf.
+  command: >-
+    asdf plugin add redis-cli ;
+    asdf install redis-cli latest ;
+    asdf set -u redis-cli latest

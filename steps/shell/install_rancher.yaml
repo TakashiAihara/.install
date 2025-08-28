@@ -1,0 +1,5 @@
+- description: Install rancher via asdf.
+  command: >-
+    asdf plugin add rancher ;
+    asdf install rancher latest ;
+    asdf set -u rancher latest
