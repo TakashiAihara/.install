@@ -1,0 +1,103 @@
+- defaults:
+    apt:
+      stderr: true
+      stdout: true
+    link:
+      create: true
+      force: true
+      relink: true
+    shell:
+      stderr: true
+      stdout: true
+- shell:
+  - command: git submodule update --init --recursive links/.dotfiles
+    description: Sync .dotfiles.
+- clean:
+  - '~'
+- link:
+    ~/.config/git:
+      create: true
+      path: links/.dotfiles/.config/git
+      relink: true
+    ~/.config/nvim:
+      create: true
+      path: links/.dotfiles/.config/nvim
+      relink: true
+    ~/.config/starship.toml:
+      create: true
+      path: links/.dotfiles/.config/starship.toml
+      relink: true
+    ~/.dein:
+      create: true
+      path: links/.dotfiles/.dein
+      relink: true
+    ~/.gitconfig:
+      create: true
+      path: links/.dotfiles/.gitconfig
+      relink: true
+    ~/.tmux.conf:
+      create: true
+      path: links/.dotfiles/.tmux.conf
+      relink: true
+    ~/.zsh:
+      create: true
+      path: links/.dotfiles/.zsh
+      relink: true
+    ~/.zshenv:
+      create: true
+      path: links/.dotfiles/.zshenv
+      relink: true
+    ~/.zshrc:
+      create: true
+      path: links/.dotfiles/.zshrc
+      relink: true
+- shell:
+  - command: sudo sed --in-place -e '/auth.*required.*pam_shells.so/s/required/sufficient/g'
+      /etc/pam.d/chsh ; sudo chsh -s `which zsh | head -1` `whoami`
+    description: Making zsh the default shell
+  - command: ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git" ;
+      rm -rf "$(dirname $ZINIT_HOME)" ; mkdir -p "$(dirname $ZINIT_HOME)" ; git clone
+      https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+    description: Install zinit.
+  - command: curl -s "https://get.sdkman.io" | bash
+    description: Install sdkman.
+  - command: asdf plugin add act ; asdf install act latest ; asdf set -u act latest
+    description: Install Act via asdf.
+  - command: asdf plugin add fzf ; asdf install fzf latest ; asdf set -u fzf latest
+    description: Install awscli via asdf.
+  - command: asdf plugin add gcloud ; asdf install gcloud latest ; asdf set -u gcloud
+      latest
+    description: Install gcloud via asdf.
+  - command: asdf plugin add github-cli ; asdf install github-cli latest ; asdf set
+      -u github-cli latest ; gh extension install maggie-j-liu/gh-star ; gh extension
+      install gabe565/gh-profile
+    description: Install gh via asdf.
+  - command: asdf plugin add ghq ; asdf install ghq latest ; asdf set -u ghq latest
+    description: Install ghq via asdf.
+  - command: asdf plugin add golang ; asdf install golang latest ; asdf set -u golang
+      latest
+    description: Install go via asdf.
+  - command: asdf plugin add nodejs ; asdf install nodejs latest ; asdf set -u nodejs
+      latest ; asdf plugin add pnpm ; asdf install pnpm latest ; asdf set -u pnpm
+      latest
+    description: Install helm via asdf.
+  - command: asdf plugin add poetry ; asdf install poetry latest ; asdf set -u poetry
+      latest
+    description: Install poetry via asdf.
+  - command: asdf plugin add python ; asdf install python latest ; asdf set -u python
+      latest
+    description: Install python via asdf.
+  - command: asdf plugin add rust ; asdf install rust latest ; asdf set -u rust latest
+      ; cargo install cargo-edit cargo-watch
+    description: Install ripgrep via asdf.
+  - command: asdf plugin add starship ; asdf install starship latest ; asdf set -u
+      starship latest
+    description: Install starship via asdf.
+  - command: asdf plugin add zoxide ; asdf install zoxide latest ; asdf set -u zoxide
+      latest
+    description: Install terraform via asdf.
+  - command: curl -sSL https://bit.ly/install-xq | sudo bash
+    description: Install xq.
+  - command: asdf plugin add postgres ; asdf install postgres latest ; asdf set -u
+      postgres latest
+    description: Install postgres via asdf.
