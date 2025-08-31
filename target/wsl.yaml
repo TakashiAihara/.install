@@ -32,10 +32,6 @@
       create: true
       path: links/etc/ssh/ssh_config
       relink: true
-    /etc/ssh/sshd_config:
-      create: true
-      path: links/etc/ssh/sshd_config
-      relink: true
     ~/.config/alacritty:
       create: true
       path: links/.dotfiles/.config/alacritty
@@ -208,6 +204,8 @@
     description: Install terraform via asdf.
   - command: curl -sSL https://bit.ly/install-xq | sudo bash
     description: Install xq.
+  - command: curl -sSL https://get.docker.com | sh
+    description: Install docker.
   - command: asdf plugin add postgres ; asdf install postgres latest ; asdf set -u
       postgres latest
     description: Install postgres via asdf.
