@@ -19,7 +19,6 @@
     nvim
     ssh
     ssh_config
-    sshd_config
     starship
     tmux
     zsh
@@ -61,5 +60,6 @@
     install_tmux
     install_zoxide
     install_xq
+    install_docker
     install_postgres
     prepare_android
