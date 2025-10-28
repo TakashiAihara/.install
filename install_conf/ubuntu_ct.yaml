@@ -5,7 +5,8 @@
 
 - clean: ["~"]
 
-- link: !link dein
+- link: !link claude
+    dein
     git
     nvim
     ssh_config
