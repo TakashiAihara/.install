@@ -31,6 +31,10 @@
       create: true
       path: links/etc/ssh/sshd_config
       relink: true
+    ~/.claude:
+      create: true
+      path: links/.dotfiles/.claude
+      relink: true
     ~/.config/alacritty:
       create: true
       path: links/.dotfiles/.config/alacritty

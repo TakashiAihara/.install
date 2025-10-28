@@ -12,6 +12,10 @@
   - command: git submodule update --init --recursive links/.ssh
     description: Sync .ssh.
 - link:
+    ~/.claude:
+      create: true
+      path: links/.dotfiles/.claude
+      relink: true
     ~/.config/alacritty:
       create: true
       path: links/.dotfiles/.config/alacritty
