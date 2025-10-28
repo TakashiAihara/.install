@@ -4,6 +4,7 @@
     .ssh
 
 - link: !link alacritty
+    claude
     git
     nvim
     ssh
