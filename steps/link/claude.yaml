@@ -1,0 +1,4 @@
+~/.claude:
+  path: links/.dotfiles/.claude
+  create: true
+  relink: true
