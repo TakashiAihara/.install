@@ -15,6 +15,10 @@
 - clean:
   - '~'
 - link:
+    ~/.claude:
+      create: true
+      path: links/.dotfiles/.claude
+      relink: true
     ~/.config/git:
       create: true
       path: links/.dotfiles/.config/git

@@ -13,6 +13,7 @@
     - /etc/ssh
 
 - link: !link alacritty
+    claude
     dein
     fonts
     git
