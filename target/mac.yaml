@@ -135,9 +135,15 @@
       ; mkdir -p $DOCKER_CONFIG/cli-plugins ; curl -SL https://github.com/docker/compose/releases/download/v2.2.3/docker-compose-linux-x86_64
       -o $DOCKER_CONFIG/cli-plugins/docker-compose ; chmod +x $DOCKER_CONFIG/cli-plugins/docker-compose
     description: Install docker.
-  - command: curl -sS https://raw.githubusercontent.com/TakashiAihara/open_functions/master/install_gh.sh
-      | sh ; gh extension install maggie-j-liu/gh-star ; gh extension install gabe565/gh-profile
-    description: Install gh.
+  - command: "BASE_DIR=\"$(pwd)\" ; source \"${BASE_DIR}/utils/log_helper.sh\" ; if\
+      \ check_installation \"GitHub CLI (gh)\" \"gh --version\" ; then\n  echo \"\
+      GitHub CLI is already installed, updating extensions...\" ;\n  execute_with_log\
+      \ \"Install gh extensions\" \"gh extension install maggie-j-liu/gh-star ; gh\
+      \ extension install gabe565/gh-profile\" ;\nelse\n  execute_with_log \"Install\
+      \ GitHub CLI (gh)\" \"curl -sS https://raw.githubusercontent.com/TakashiAihara/open_functions/master/install_gh.sh\
+      \ | sh\" ;\n  execute_with_log \"Install gh extensions\" \"gh extension install\
+      \ maggie-j-liu/gh-star ; gh extension install gabe565/gh-profile\" ;\nfi"
+    description: Install gh with logging
   - command: curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh
       | bash
     description: Install zoxide.
