@@ -9,15 +9,32 @@ export DOTBOT_ARCH=${ARCH:-wsl}
 
 BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-git submodule update --init --recursive --merge "${DOTBOT_PLUGINS_DIR}/${DOTBOT}"
+# ログヘルパーをロード
+source "${BASE_DIR}/utils/log_helper.sh"
 
-"${BASE_DIR}/${DOTBOT_PLUGINS_DIR}/${DOTBOT}/${DOTBOT_BIN}" \
+# インストール開始をログに記録
+log_message "INFO" "=== Starting installation process ==="
+log_message "INFO" "DOTBOT_AREA: $DOTBOT_AREA"
+log_message "INFO" "DOTBOT_ARCH: $DOTBOT_ARCH"
+log_message "INFO" "BASE_DIR: $BASE_DIR"
+
+execute_with_log "Updating git submodules" \
+  git submodule update --init --recursive --merge "${DOTBOT_PLUGINS_DIR}/${DOTBOT}"
+
+execute_with_log "Running prepare configuration" \
+  "${BASE_DIR}/${DOTBOT_PLUGINS_DIR}/${DOTBOT}/${DOTBOT_BIN}" \
   -d "${BASE_DIR}" \
   -c "${BASE_DIR}/${DOTBOT_CONFIG_TARGET_DIR}/${DOTBOT_PREPARE_CONFIG_FILE}${DOTBOT_CONFIG_FILE_SUFFIX}"
 
-"${BASE_DIR}/${DOTBOT_PLUGINS_DIR}/${DOTBOT}/${DOTBOT_BIN}" \
+execute_with_log "Running main installation for $DOTBOT_ARCH" \
+  "${BASE_DIR}/${DOTBOT_PLUGINS_DIR}/${DOTBOT}/${DOTBOT_BIN}" \
   -d "${BASE_DIR}" \
   --plugin-dir "${DOTBOT_PLUGINS_DIR}/${DOTBOT_BREWFILE_PLUGIN}" \
   --plugin-dir "${DOTBOT_PLUGINS_DIR}/${DOTBOT_GO_PLUGIN}" \
   --plugin-dir "${DOTBOT_PLUGINS_DIR}/${DOTBOT_APT_PLUGIN}" \
   -c "${BASE_DIR}/${DOTBOT_CONFIG_TARGET_DIR}/${DOTBOT_ARCH}${DOTBOT_CONFIG_FILE_SUFFIX}" "${@}"
+
+# インストール完了後のサマリーを表示
+log_message "INFO" "=== Installation process completed ==="
+echo ""
+generate_summary
