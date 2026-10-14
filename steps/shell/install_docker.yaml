@@ -1,3 +1,9 @@
-- description: Install docker.
+- description: Install docker with logging
   command: >-
-    curl -sSL https://get.docker.com | sh
+    BASE_DIR="$(pwd)" ;
+    source "${BASE_DIR}/utils/log_helper.sh" ;
+    if check_installation "Docker" "docker --version" ; then
+      echo "Docker is already installed, skipping..." ;
+    else
+      execute_with_log "Install Docker" "curl -sSL https://get.docker.com | sh" ;
+    fi

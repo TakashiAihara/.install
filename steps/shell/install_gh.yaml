@@ -1,5 +1,11 @@
-- description: Install gh.
+- description: Install gh with logging
   command: >-
-    curl -sS https://raw.githubusercontent.com/TakashiAihara/open_functions/master/install_gh.sh | sh ;
-    gh extension install maggie-j-liu/gh-star ;
-    gh extension install gabe565/gh-profile
+    BASE_DIR="$(pwd)" ;
+    source "${BASE_DIR}/utils/log_helper.sh" ;
+    if check_installation "GitHub CLI (gh)" "gh --version" ; then
+      echo "GitHub CLI is already installed, updating extensions..." ;
+      execute_with_log "Install gh extensions" "gh extension install maggie-j-liu/gh-star ; gh extension install gabe565/gh-profile" ;
+    else
+      execute_with_log "Install GitHub CLI (gh)" "curl -sS https://raw.githubusercontent.com/TakashiAihara/open_functions/master/install_gh.sh | sh" ;
+      execute_with_log "Install gh extensions" "gh extension install maggie-j-liu/gh-star ; gh extension install gabe565/gh-profile" ;
+    fi

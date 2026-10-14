@@ -61,3 +61,59 @@ $Env:AREA="home" ; $Env:ARCH="windows" ; .\install.ps1
 
 * plugins
   * Contains submodule that dotbot plugins.
+
+## Logging and Maintenance
+
+This installer now includes comprehensive logging to track installation status and help with maintenance:
+
+### Log Features
+
+* **Automatic Logging**: All installation steps are logged to `~/.install.log`
+* **Success/Failure Tracking**: Each installation step is marked as SUCCESS or ERROR
+* **Output Capture**: Both stdout and stderr are captured for debugging
+* **Duration Tracking**: Installation time for each component is recorded
+* **Skip Detection**: Already installed tools are detected and skipped
+
+### Check Installation Status
+
+```bash
+# Check current installation status and maintenance needs
+./utils/check_installation_status.sh
+```
+
+This will show:
+* Which tools are installed/not installed
+* Recent installation errors
+* Available updates for package managers
+* Maintenance recommendations
+
+### View Logs
+
+```bash
+# View recent log entries
+tail -50 ~/.install.log
+
+# View only errors
+grep "\[ERROR\]" ~/.install.log
+
+# View only successful installations
+grep "\[SUCCESS\]" ~/.install.log
+
+# Generate installation summary
+./install # (summary is shown at the end)
+```
+
+### Log Format
+
+The log file uses the following format:
+```
+[YYYY-MM-DD HH:MM:SS] [LEVEL] Message
+```
+
+Where LEVEL can be:
+* `INFO`: General information
+* `SUCCESS`: Successful installation
+* `ERROR`: Failed installation
+* `CHECK`: Installation status check
+* `STDOUT`: Command output
+* `STDERR`: Command error output
